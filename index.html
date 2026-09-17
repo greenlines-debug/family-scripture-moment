@@ -334,22 +334,22 @@
 
   <script>
     const weeksMeta = [
-	  { id: 1, title: "Sep 14–20: Isaiah 1–12", start: "2026-09-14", end: "2026-09-20", keyScripture: "Isaiah 1:18", theme: "Cleansing & Salvation", mediaTitle: "Old Testament Stories: Isaiah the Prophet", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Old+Testament+Stories+Isaiah+the+Prophet" },
-	  { id: 2, title: "Sep 21–27: Isaiah 13–14; 24–30; 35", start: "2026-09-21", end: "2026-09-27", keyScripture: "Isaiah 25:8", theme: "Refuge from the Storm", mediaTitle: "Gospel Art: Peace in Christ", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/2020-07-peace-in-christ?lang=eng" },
+	  { id: 1, title: "Sep 14–20: Isaiah 1–12", start: "2026-09-14", end: "2026-09-20", keyScripture: "Isaiah 1:18", theme: "Cleansing & Salvation", mediaTitle: "Old Testament Stories: Isaiah the Prophet", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-36-isaiah-the-prophet?lang=eng" },
+	  { id: 2, title: "Sep 21–27: Isaiah 13–14; 24–30; 35", start: "2026-09-21", end: "2026-09-27", keyScripture: "Isaiah 25:8", theme: "Refuge from the Storm", mediaTitle: "Hymns: Peace in Christ", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/2020-07-peace-in-christ?lang=eng" },
 	  { id: 3, title: "Sep 28–Oct 4: Isaiah 40–49", start: "2026-09-28", end: "2026-10-04", keyScripture: "Isaiah 41:10", theme: "Fear Not, I Am With Thee", mediaTitle: "Hymn: How Firm a Foundation", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/how-firm-a-foundation?lang=eng" },
-	  { id: 4, title: "Oct 5–11: Isaiah 50–57", start: "2026-10-05", end: "2026-10-11", keyScripture: "Isaiah 53:5", theme: "He Hath Borne Our Griefs", mediaTitle: "The Messiah: Isaiah 53", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=The+Messiah+Isaiah+53" },
-	  { id: 5, title: "Oct 12–18: Isaiah 58–66", start: "2026-10-12", end: "2026-10-18", keyScripture: "Isaiah 58:13-14", theme: "Sabbath Delight & Fasting", mediaTitle: "Video: Fasting and Caring for the Poor", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Fasting+and+Caring+for+the+Poor" },
-	  { id: 6, title: "Oct 19–25: Jeremiah 1–20", start: "2026-10-19", end: "2026-10-25", keyScripture: "Jeremiah 1:5", theme: "Known Before Birth & Called", mediaTitle: "Gospel Art: Jeremiah the Prophet", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Jeremiah+the+Prophet" },
-	  { id: 7, title: "Oct 26–Nov 1: Jeremiah 30–36; Ezekiel 1–34", start: "2026-10-26", end: "2026-11-01", keyScripture: "Jeremiah 31:33", theme: "Covenants Written on Hearts", mediaTitle: "Video: Law of the Lord in Our Hearts", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Law+of+the+Lord+in+Our+Hearts" },
-	  { id: 8, title: "Nov 2–8: Ezekiel 37; 47", start: "2026-11-02", end: "2026-11-08", keyScripture: "Ezekiel 37:19", theme: "Two Sticks Made One & Healing Waters", mediaTitle: "Video: The Book of Mormon and Bible Joined", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Ezekiel+Two+Sticks" },
-	  { id: 9, title: "Nov 9–15: Daniel 1–6", start: "2026-11-09", end: "2026-11-15", keyScripture: "Daniel 3:17-18", theme: "Courage in Trials ('But If Not')", mediaTitle: "Old Testament Stories: Daniel in the Lion's Den", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Old+Testament+Stories+Daniel+and+the+Lions+Den" },
-	  { id: 10, title: "Nov 16–22: Hosea 1–6; 11; Joel 2–3", start: "2026-11-16", end: "2026-11-22", keyScripture: "Joel 2:28", theme: "Outpouring of the Holy Spirit", mediaTitle: "Video: The Gift and Power of the Holy Ghost", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Gift+and+Power+of+the+Holy+Ghost" },
-	  { id: 11, title: "Nov 23–29: Amos 3–5; Obadiah", start: "2026-11-23", end: "2026-11-29", keyScripture: "Amos 5:14", theme: "Seeking Goodness & Living Faith", mediaTitle: "Message Clip: Seeking the Lord Daily", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Seeking+the+Lord+Daily" },
-	  { id: 12, title: "Nov 30–Dec 6: Jonah; Micah", start: "2026-11-30", end: "2026-12-06", keyScripture: "Micah 6:8", theme: "Loving Mercy & Walking Humbly", mediaTitle: "Old Testament Stories: Jonah and the Great Fish", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Old+Testament+Stories+Jonah" },
-	  { id: 13, title: "Dec 7–13: Haggai; Zechariah; Malachi 1-2", start: "2026-12-07", end: "2026-12-13", keyScripture: "Haggai 1:7", theme: "Rebuilding the Temple & Priorities", mediaTitle: "Video: House of the Lord and Sacred Priorities", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=House+of+the+Lord+Sacred+Priorities" },
-	  { id: 14, title: "Dec 14–20: Christmas Season Focus", start: "2026-12-14", end: "2026-12-20", keyScripture: "Isaiah 9:6", theme: "Unto Us a Child Is Born", mediaTitle: "Church Film: The Christ Child", mediaUrl: "https://www.churchofjesuschrist.org/comeuntochrist/uk/lighttheworld/the-christ-child" },
-	  { id: 15, title: "Dec 21–27: Malachi 3–4", start: "2026-12-21", end: "2026-12-27", keyScripture: "Malachi 4:5-6", theme: "Turning Hearts to the Fathers", mediaTitle: "Video: Hearts of the Children (Family History)", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Hearts+of+the+Children+Family+History" },
-	  { id: 16, title: "Dec 28–31: Year-End Covenant Review", start: "2026-12-28", end: "2026-12-31", keyScripture: "Joshua 24:15", theme: "Choosing to Serve the Lord", mediaTitle: "Special Witnesses of Christ Series", mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Special+Witnesses+of+Christ" }
+	  { id: 4, title: "Oct 5–11: Isaiah 50–57", start: "2026-10-05", end: "2026-10-11", keyScripture: "Isaiah 53:5", theme: "He Hath Borne Our Griefs", mediaTitle: "The Messiah: Isaiah 53 Prophecies", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-seminary-teacher-manual-2025/511-the-living-christ-part-1?lang=eng" },
+	  { id: 5, title: "Oct 12–18: Isaiah 58–66", start: "2026-10-12", end: "2026-10-18", keyScripture: "Isaiah 58:13-14", theme: "Sabbath Delight & Fasting", mediaTitle: "General Conference: Is Not This the Fast That I Have Chosen?", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2015/04/is-not-this-the-fast-that-i-have-chosen?lang=eng" },
+	  { id: 6, title: "Oct 19–25: Jeremiah 1–20", start: "2026-10-19", end: "2026-10-25", keyScripture: "Jeremiah 1:5", theme: "Known Before Birth & Called", mediaTitle: "Old Testament Stories: Jeremiah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-41-jeremiah?lang=eng" },
+	  { id: 7, title: "Oct 26–Nov 1: Jeremiah 30–36; Ezekiel 1–34", start: "2026-10-26", end: "2026-11-01", keyScripture: "Jeremiah 31:33", theme: "Covenants Written on Hearts", mediaTitle: "General Conference: Covenants and Commitments", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2012/10/covenants?lang=eng" },
+	  { id: 8, title: "Nov 2–8: Ezekiel 37; 47", start: "2026-11-02", end: "2026-11-08", keyScripture: "Ezekiel 37:19", theme: "Two Sticks Made One & Healing Waters", mediaTitle: "Old Testament Stories: Ezekiel", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-37-ezekiel?lang=eng" },
+	  { id: 9, title: "Nov 9–15: Daniel 1–6", start: "2026-11-09", end: "2026-11-15", keyScripture: "Daniel 3:17-18", theme: "Courage in Trials ('But If Not')", mediaTitle: "Old Testament Stories: Daniel and the Lions' Den", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-42-daniel-and-the-lions-den?lang=eng" },
+	  { id: 10, title: "Nov 16–22: Hosea 1–6; 11; Joel 2–3", start: "2026-11-16", end: "2026-11-22", keyScripture: "Joel 2:28", theme: "Outpouring of the Holy Spirit", mediaTitle: "General Conference: The Gift of the Holy Ghost", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2010/04/the-gift-of-the-holy-ghost?lang=eng" },
+	  { id: 11, title: "Nov 23–29: Amos 3–5; Obadiah", start: "2026-11-23", end: "2026-11-29", keyScripture: "Amos 5:14", theme: "Seeking Goodness & Living Faith", mediaTitle: "General Conference: Seek the Lord Daily", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/04/seeking-the-lord?lang=eng" },
+	  { id: 12, title: "Nov 30–Dec 6: Jonah; Micah", start: "2026-11-30", end: "2026-12-06", keyScripture: "Micah 6:8", theme: "Loving Mercy & Walking Humbly", mediaTitle: "Old Testament Stories: Jonah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-40-jonah?lang=eng" },
+	  { id: 13, title: "Dec 7–13: Haggai; Zechariah; Malachi 1-2", start: "2026-12-07", end: "2026-12-13", keyScripture: "Haggai 1:7", theme: "Rebuilding the Temple & Priorities", mediaTitle: "General Conference: Consider Your Ways", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/10/deep-and-lasting-conversion-to-heavenly-father-and-the-lord-jesus-christ?lang=eng" },
+	  { id: 14, title: "Dec 14–20: Christmas Season Focus", start: "2026-12-14", end: "2026-12-20", keyScripture: "Isaiah 9:6", theme: "Unto Us a Child Is Born", mediaTitle: "Church Film: The Christ Child", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/the-christ-child/the-christ-child?lang=eng" },
+	  { id: 15, title: "Dec 21–27: Malachi 3–4", start: "2026-12-21", end: "2026-12-27", keyScripture: "Malachi 4:5-6", theme: "Turning Hearts to the Fathers", mediaTitle: "General Conference: The Spirit of Elijah", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2011/10/the-hearts-of-the-children-shall-turn?lang=eng" },
+	  { id: 16, title: "Dec 28–31: Year-End Covenant Review", start: "2026-12-28", end: "2026-12-31", keyScripture: "Joshua 24:15", theme: "Choosing to Serve the Lord", mediaTitle: "Special Witnesses of Christ Series", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/special-witnesses-of-christ/special-witnesses-of-christ?lang=eng" }
 	];
 
       // --- WEEK 1: Sep 14–20 ---
@@ -363,7 +363,7 @@
 		action: "Read Isaiah 1:16–19 and write down one change you feel inspired to make.",
 		prayer: "Thank Heavenly Father specifically for the gift of His Son's Atonement.",
 		mediaTitle: "Old Testament Stories: Chapter 36: Isaiah the Prophet",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Old+Testament+Stories+Isaiah+the+Prophet"
+		mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-36-isaiah-the-prophet?lang=eng"
 	  },
 	  "2026-09-15": {
 		focus: "Sanctuary in the Lord's House",
@@ -372,8 +372,8 @@
 		reflection: "How can you bring more 'temple peace' into your home environment today?",
 		action: "Display a picture of a temple in your home or schedule your next temple visit.",
 		prayer: "Pray for a family member or friend who is currently seeking peace.",
-		mediaTitle: "Video: Temples: The House of the Lord",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Temples+House+of+the+Lord"
+		mediaTitle: "Newsroom: House of the Lord Sacred Meaning",
+		mediaUrl: "https://newsroom.churchofjesuschrist.org/article/inside-temples"
 	  },
 	  "2026-09-16": {
 		focus: "Emmanuel — God With Us",
@@ -382,8 +382,8 @@
 		reflection: "When did you feel God's presence in your life recently?",
 		action: "Read Matthew 1:21–23 and text a family member why you appreciate the Savior.",
 		prayer: "Offer a short silent prayer midday acknowledging God's presence.",
-		mediaTitle: "Gospel Art: The Prophesied Messiah",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Prophesied+Messiah"
+		mediaTitle: "Gospel Art: Prophecies of Jesus Christ",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/old-testament?lang=eng"
 	  },
 	  "2026-09-17": {
 		focus: "Sacred Titles of the Savior",
@@ -392,8 +392,8 @@
 		reflection: "Which title of Jesus Christ do you need most in your life today?",
 		action: "Write one title on a note or phone lock screen to ponder throughout the day.",
 		prayer: "Address Jesus using this specific title during your prayer today.",
-		mediaTitle: "The Living Christ: Testimony of the Apostles",
-		mediaUrl: "https://newsroom.churchofjesuschrist.org/article/the-living-christ"
+		mediaTitle: "Official Declaration: The Living Christ",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng"
 	  },
 	  "2026-09-18": {
 		focus: "Transforming Conflict into Peace",
@@ -402,7 +402,7 @@
 		reflection: "What sharp reaction or frustration can you lay aside today?",
 		action: "Intentionally respond with gentleness during a challenging conversation.",
 		prayer: "Pray for the spirit of a peacemaker in your conversations today.",
-		mediaTitle: "General Conference Message: Peacemakers Needed",
+		mediaTitle: "General Conference: Peacemakers Needed (President Russell M. Nelson)",
 		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2023/04/47nelson?lang=eng"
 	  },
 	  "2026-09-19": {
@@ -412,7 +412,7 @@
 		reflection: "Which daily spiritual habit gives you the greatest sense of peace?",
 		action: "Listen to or sing a favorite hymn of gratitude from the Sacred Music app.",
 		prayer: "Offer a prayer composed entirely of thanks without asking for anything.",
-		mediaTitle: "Hymn: I Believe in Christ (Sacred Music)",
+		mediaTitle: "Hymns: I Believe in Christ",
 		mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/i-believe-in-christ?lang=eng"
 	  },
 	  "2026-09-20": {
@@ -422,8 +422,8 @@
 		reflection: "How can your family stand as a banner of faith and kindness in your community?",
 		action: "Share an uplifting spiritual insight with a friend or family member today.",
 		prayer: "Pray for missionaries throughout the world and those they are teaching.",
-		mediaTitle: "Short Video: Gathering Scattered Israel",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Gathering+Scattered+Israel"
+		mediaTitle: "General Conference: Hope of Israel (Gathering Israel)",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-youth/2018/06/hope-of-israel?lang=eng"
 	  },
 
 	  // --- WEEK 2: Sep 21–27 ---
@@ -435,7 +435,7 @@
 		action: "Read Isaiah 25:1–4 and list three ways God has shielded you in past trials.",
 		prayer: "Ask Heavenly Father for comfort and strength during a current challenge.",
 		mediaTitle: "Gospel Art: Christ Calming the Storm",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Christ+Calming+the+Storm"
+		mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/new-testament?lang=eng"
 	  },
 	  "2026-09-22": {
 		focus: "Swallowing Up Death in Victory",
@@ -444,8 +444,8 @@
 		reflection: "How does knowledge of the Resurrection bring comfort to your daily living?",
 		action: "Reach out to someone who has recently lost a loved one with a kind message.",
 		prayer: "Express gratitude for the Resurrection and the promise of eternal life.",
-		mediaTitle: "Video: He Will Wipe Away All Tears",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=He+Will+Wipe+Away+All+Tears"
+		mediaTitle: "General Conference: Sunday Will Come",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2006/10/sunday-will-come?lang=eng"
 	  },
 	  "2026-09-23": {
 		focus: "Perfect Peace Through Trust",
@@ -454,7 +454,7 @@
 		reflection: "What distraction is pulling your focus away from the Savior's peace?",
 		action: "Take a 5-minute technology break today to reflect on Proverbs 3:5–6.",
 		prayer: "Pray for mental clarity and stillness during your busiest moments today.",
-		mediaTitle: "Audio: Peace in Christ (Youth Theme)",
+		mediaTitle: "Hymns: Peace in Christ (Youth Theme)",
 		mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/2020-07-peace-in-christ?lang=eng"
 	  },
 	  "2026-09-24": {
@@ -464,8 +464,8 @@
 		reflection: "What small spiritual habit have you developed recently that is making a difference?",
 		action: "Identify one small daily habit to improve your spiritual learning this week.",
 		prayer: "Thank God for His patience with your line-upon-line learning process.",
-		mediaTitle: "Video: Pattern of Light: Spirit of Revelation",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Pattern+of+Light+Spirit+of+Revelation"
+		mediaTitle: "General Conference: Patterns of Light",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2012/04/the-spirit-of-revelation?lang=eng"
 	  },
 	  "2026-09-25": {
 		focus: "A Voice Behind Thee",
@@ -474,8 +474,8 @@
 		reflection: "How do you best recognize the promptings of the Holy Ghost in your life?",
 		action: "Act immediately on the first good spiritual impression you feel today.",
 		prayer: "Pray for open ears and a humble heart to follow the Spirit's promptings.",
-		mediaTitle: "Video Clip: Hear Him (President Russell M. Nelson)",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Hear+Him+Russell+M+Nelson"
+		mediaTitle: "General Conference: Hear Him (President Russell M. Nelson)",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2020/04/45nelson?lang=eng"
 	  },
 	  "2026-09-26": {
 		focus: "The Desert Shall Blossom as the Rose",
@@ -484,8 +484,8 @@
 		reflection: "Where in your life do you feel spiritually dry, and how can Christ refresh it?",
 		action: "Read Isaiah 35:1–6 and write down one hope you have for your spiritual future.",
 		prayer: "Ask God to bring spiritual growth into an area of your life that feels challenging.",
-		mediaTitle: "Gospel Art: Pioneer Journey & Wilderness Blooming",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Pioneer+Wilderness+Blooming"
+		mediaTitle: "Gospel Art: Pioneer Journey",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/church-history?lang=eng"
 	  },
 	  "2026-09-27": {
 		focus: "Strengthening Feeble Knees",
@@ -494,8 +494,8 @@
 		reflection: "Who in your circle needs a word of encouragement or a helping hand today?",
 		action: "Perform an anonymous act of service for a family member or neighbor.",
 		prayer: "Ask Heavenly Father to guide you to someone who needs lifting today.",
-		mediaTitle: "Video: Lift Up the Hands Which Hang Down",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Lift+Up+the+Hands+Which+Hang+Down"
+		mediaTitle: "General Conference: Lift Up the Hands Which Hang Down",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2008/10/lift-up-the-hands-which-hang-down?lang=eng"
 	  },
 
 	  // --- WEEK 3: Sep 28–Oct 4 ---
@@ -507,7 +507,7 @@
 		action: "Read Isaiah 40:1–11 and highlight words that bring you comfort.",
 		prayer: "Thank the Savior for His tender loving-kindness and personal care.",
 		mediaTitle: "Gospel Art: The Good Shepherd",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=The+Good+Shepherd"
+		mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/new-testament?lang=eng"
 	  },
 	  "2026-09-29": {
 		focus: "Renewing Strength Like Eagles",
@@ -516,7 +516,7 @@
 		reflection: "In what area of your life are you currently learning to wait on the Lord's timing?",
 		action: "Take a few minutes to rest spiritually and meditate on Isaiah 40:28–31.",
 		prayer: "Ask for patience and renewed energy as you wait upon the Lord.",
-		mediaTitle: "Audio/Hymn: How Firm a Foundation",
+		mediaTitle: "Hymn: How Firm a Foundation",
 		mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/how-firm-a-foundation?lang=eng"
 	  },
 	  "2026-09-30": {
@@ -526,8 +526,8 @@
 		reflection: "What fear can you consciously choose to hand over to God today?",
 		action: "Memorize or write down Isaiah 41:10 on a card to carry with you today.",
 		prayer: "Pray for courage to replace fear with faith in God's promises.",
-		mediaTitle: "Video: Fear Not: I Am With Thee",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Fear+Not+I+Am+With+Thee"
+		mediaTitle: "General Conference: Be Not Troubled",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2008/10/be-not-troubled?lang=eng"
 	  },
 	  "2026-10-01": {
 		focus: "A Light to the Gentiles",
@@ -536,8 +536,8 @@
 		reflection: "How can your everyday attitude reflect the Savior's light to those around you?",
 		action: "Smile and offer a genuine compliment to three people you interact with today.",
 		prayer: "Ask God to help your life reflect Christ's love to everyone you meet.",
-		mediaTitle: "Video Clip: Let Your Light So Shine",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Let+Your+Light+So+Shine"
+		mediaTitle: "General Conference: Let Your Light So Shine",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2010/04/let-your-light-so-shine?lang=eng"
 	  },
 	  "2026-10-02": {
 		focus: "I Have Redeemed Thee, Thou Art Mine",
@@ -546,8 +546,8 @@
 		reflection: "How does knowing you belong to God change your sense of self-worth?",
 		action: "Write down three divine qualities you know God has blessed you with.",
 		prayer: "Thank Heavenly Father for your divine identity as His child.",
-		mediaTitle: "Special Video: Child of God",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Child+of+God"
+		mediaTitle: "General Conference: Am I a Child of God?",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/10/am-i-a-child-of-god?lang=eng"
 	  },
 	  "2026-10-03": {
 		focus: "Blotting Out Transgressions",
@@ -556,8 +556,8 @@
 		reflection: "Are you allowing Christ's grace to sweep away old regrets?",
 		action: "Read Isaiah 44:21–23 and ponder the joy of complete forgiveness.",
 		prayer: "Pray for the faith to accept God's forgiveness and forgive yourself.",
-		mediaTitle: "Video: Repentance: A Joyful Choice",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Repentance+A+Joyful+Choice"
+		mediaTitle: "General Conference: Repentance Is Always Positive",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2019/04/13nelson?lang=eng"
 	  },
 	  "2026-10-04": {
 		focus: "Graven Upon the Palms of His Hands",
@@ -566,8 +566,8 @@
 		reflection: "Why is it important to remember that Jesus will never forget or abandon you?",
 		action: "Look at a picture of the resurrected Savior and ponder His love for you.",
 		prayer: "Express heartfelt gratitude to Jesus for His eternal commitment to you.",
-		mediaTitle: "Gospel Art: Hands of the Savior",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Hands+of+the+Savior"
+		mediaTitle: "Gospel Art: Resurrected Jesus Christ",
+		mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/new-testament?lang=eng"
 	  },
 
 	  // --- WEEK 14 Christmas Excerpt ---
@@ -578,8 +578,8 @@
 		reflection: "How has the Savior's birth brought light and healing into your home today?",
 		action: "Express love and gratitude to every member of your household today.",
 		prayer: "Pour out a prayer of deep joy and gratitude for the birth of Jesus Christ.",
-		mediaTitle: "Hymn Video: Hark! The Herald Angels Sing",
-		mediaUrl: "https://www.churchofjesuschrist.org/search?lang=eng&query=Hark+The+Herald+Angels+Sing"
+		mediaTitle: "Hymns: Hark! The Herald Angels Sing",
+		mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/hark-the-herald-angels-sing?lang=eng"
 	  }
 	};
 
