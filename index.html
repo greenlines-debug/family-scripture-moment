@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Spiritual Brain Train — CFM 2026</title>
+  <style>
+    :root {
+      --primary: #1a5276;
+      --primary-light: #ebf5fb;
+      --accent: #d4ac0d;
+      --bg: #f4f7f6;
+      --card-bg: #ffffff;
+      --text: #2c3e50;
+      --text-muted: #7f8c8d;
+      --success: #27ae60;
+      --border-radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a5276, #2980b9);
+      color: white;
+      padding: 24px;
+      border-radius: var(--border-radius);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .header-title h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-title p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .streak-badge {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .controls {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: var(--border-radius);
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .controls select, .controls input {
+      flex: 1;
+      min-width: 180px;
+      padding: 10px 14px;
+      border: 1px solid #dcdde1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+    }
+
+    .date-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .week-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .day-title {
+      font-size: 1.25rem;
+      color: var(--text);
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding: 16px;
+      background: #fafbfc;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scripture-quote {
+      font-style: italic;
+      color: #34495e;
+      background: var(--primary-light);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .checklist {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      padding: 12px 16px;
+      border: 1px solid #e1e8ed;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .check-item:hover {
+      border-color: var(--primary);
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--success);
+      cursor: pointer;
+    }
+
+    .check-item.completed {
+      background: #f0fff4;
+      border-color: #c6f6d5;
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .media-box {
+      margin-top: 16px;
+      padding: 12px;
+      background: #fcf8e3;
+      border: 1px solid #faebcc;
+      border-radius: 8px;
+      font-size: 0.88rem;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #143d59;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      <h1>Spiritual Brain Train</h1>
+      <p>Come, Follow Me 2026 — Old Testament</p>
+    </div>
+    <div class="streak-badge">
+      🔥 <span id="streak-count">0</span> Day Streak
+    </div>
+  </header>
+
+  <div class="controls">
+    <select id="week-select" onchange="onWeekChange()">
+      <!-- Populated via JavaScript -->
+    </select>
+    <input type="date" id="date-picker" min="2026-09-14" max="2026-12-31" onchange="onDateChange()" />
+  </div>
+
+  <main id="app-content">
+    <div class="card">
+      <div class="date-header">
+        <div>
+          <div class="week-label" id="week-name">Week Loading...</div>
+          <h2 class="day-title" id="day-date">Select a Date</h2>
+        </div>
+      </div>
+
+      <!-- Scripture & Focus -->
+      <div class="section">
+        <div class="section-title">📖 Scripture & Daily Focus</div>
+        <div id="focus-text"><b>Focus:</b> -</div>
+        <div class="scripture-quote" id="scripture-text">-</div>
+      </div>
+
+      <!-- 1-Minute Core Insight -->
+      <div class="section">
+        <div class="section-title">💡 1-Minute Core Insight</div>
+        <p id="insight-text">-</p>
+      </div>
+
+      <!-- Reflection Question -->
+      <div class="section">
+        <div class="section-title">🤔 Reflection Question</div>
+        <p id="reflection-text">-</p>
+      </div>
+
+      <!-- Action Challenge -->
+      <div class="section">
+        <div class="section-title">🎯 Action Challenge</div>
+        <p id="action-text">-</p>
+      </div>
+
+      <!-- Prayer Prompt -->
+      <div class="section">
+        <div class="section-title">🙏 Prayer Prompt</div>
+        <p id="prayer-text">-</p>
+      </div>
+
+      <!-- Church Media Recommendation -->
+      <div class="media-box" id="media-text">
+        🎬 <b>Church Media Recommendation:</b> -
+      </div>
+
+      <!-- Daily Tracker Checklist -->
+      <div class="checklist">
+        <label class="check-item" id="item-read-box">
+          <input type="checkbox" id="check-read" onchange="toggleStep('read')" />
+          <span>Read Scripture & Insight</span>
+        </label>
+        <label class="check-item" id="item-reflect-box">
+          <input type="checkbox" id="check-reflect" onchange="toggleStep('reflect')" />
+          <span>Ponder Reflection Question</span>
+        </label>
+        <label class="check-item" id="item-act-box">
+          <input type="checkbox" id="check-act" onchange="toggleStep('act')" />
+          <span>Complete Action Challenge</span>
+        </label>
+        <label class="check-item" id="item-pray-box">
+          <input type="checkbox" id="check-pray" onchange="toggleStep('pray')" />
+          <span>Offer Personal / Family Prayer</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn" id="prev-btn" onclick="navigateDay(-1)">← Previous Day</button>
+      <button class="btn" id="next-btn" onclick="navigateDay(1)">Next Day →</button>
+    </div>
+  </main>
+
+  <footer>
+    Scripture verses from the King James Version (KJV) as published by The Church of Jesus Christ of Latter-day Saints.
+  </footer>
+
+  <script>
+    // Master Curriculum Data Architecture: Sep 14 - Dec 31, 2026
+    const weeksMeta = [
+      { id: 1, title: "Sep 14–20: Isaiah 1–12", start: "2026-09-14", end: "2026-09-20", keyScripture: "Isaiah 1:18", theme: "Cleansing & Salvation", media: "Old Testament Stories: Isaiah the Prophet" },
+      { id: 2, title: "Sep 21–27: Isaiah 13–14; 24–30; 35", start: "2026-09-21", end: "2026-09-27", keyScripture: "Isaiah 25:8", theme: "Refuge from the Storm", media: "Gospel Art: Second Coming & Peace in Christ" },
+      { id: 3, title: "Sep 28–Oct 4: Isaiah 40–49", start: "2026-09-28", end: "2026-10-04", keyScripture: "Isaiah 41:10", theme: "Fear Not, I Am With Thee", media: "Hymn Video: How Firm a Foundation" },
+      { id: 4, title: "Oct 5–11: Isaiah 50–57", start: "2026-10-05", end: "2026-10-11", keyScripture: "Isaiah 53:5", theme: "He Hath Borne Our Griefs", media: "The Messiah Video Series: Isaiah 53" },
+      { id: 5, title: "Oct 12–18: Isaiah 58–66", start: "2026-10-12", end: "2026-10-18", keyScripture: "Isaiah 58:13-14", theme: "Sabbath Delight & Fasting", media: "Video: Fasting and Caring for the Poor" },
+      { id: 6, title: "Oct 19–25: Jeremiah 1–20", start: "2026-10-19", end: "2026-10-25", keyScripture: "Jeremiah 1:5", theme: "Known Before Birth & Called", media: "Gospel Art: Jeremiah the Prophet" },
+      { id: 7, title: "Oct 26–Nov 1: Jeremiah 30–36; Ezekiel 1–34", start: "2026-10-26", end: "2026-11-01", keyScripture: "Jeremiah 31:33", theme: "Covenants Written on Hearts", media: "Video: Law of the Lord in Our Hearts" },
+      { id: 8, title: "Nov 2–8: Ezekiel 37; 47", start: "2026-11-02", end: "2026-11-08", keyScripture: "Ezekiel 37:19", theme: "Two Sticks Made One & Healing Waters", media: "Video: The Book of Mormon and Bible Joined" },
+      { id: 9, title: "Nov 9–15: Daniel 1–6", start: "2026-11-09", end: "2026-11-15", keyScripture: "Daniel 3:17-18", theme: "Courage in Trials ('But If Not')", media: "Old Testament Stories: Daniel in the Lion's Den" },
+      { id: 10, title: "Nov 16–22: Hosea 1–6; 11; Joel 2–3", start: "2026-11-16", end: "2026-11-22", keyScripture: "Joel 2:28", theme: "Outpouring of the Holy Spirit", media: "Video: The Gift and Power of the Holy Ghost" },
+      { id: 11, title: "Nov 23–29: Amos 3–5; Obadiah", start: "2026-11-23", end: "2026-11-29", keyScripture: "Amos 5:14", theme: "Seeking Goodness & Living Faith", media: "Message Clip: Seeking the Lord Daily" },
+      { id: 12, title: "Nov 30–Dec 6: Jonah; Micah", start: "2026-11-30", end: "2026-12-06", keyScripture: "Micah 6:8", theme: "Loving Mercy & Walking Humbly", media: "Old Testament Stories: Jonah and the Great Fish" },
+      { id: 13, title: "Dec 7–13: Haggai; Zechariah; Malachi 1-2", start: "2026-12-07", end: "2026-12-13", keyScripture: "Haggai 1:7", theme: "Rebuilding the Temple & Priorities", media: "Video: House of the Lord and Sacred Priorities" },
+      { id: 14, title: "Dec 14–20: Christmas Season Focus", start: "2026-12-14", end: "2026-12-20", keyScripture: "Isaiah 9:6", theme: "Unto Us a Child Is Born", media: "Church Film: The Christ Child" },
+      { id: 15, title: "Dec 21–27: Malachi 3–4", start: "2026-12-21", end: "2026-12-27", keyScripture: "Malachi 4:5-6", theme: "Turning Hearts to the Fathers", media: "Video: Hearts of the Children (Family History)" },
+      { id: 16, title: "Dec 28–31: Year-End Covenant Review", start: "2026-12-28", end: "2026-12-31", keyScripture: "Joshua 24:15", theme: "Choosing to Serve the Lord", media: "Special Witnesses of Christ Series" }
+    ];
+
+    // Specific KJV Daily Scriptures Database covering all dates Sep 14 to Dec 31
+    const scriptureDatabase = {
+	  // --- WEEK 1: Sep 14–20 (Isaiah 1–12: "God Is My Salvation") ---
+	  "2026-09-14": {
+		focus: "Cleansing through Jesus Christ",
+		scripture: "Isaiah 1:18 — \"Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.\"",
+		insight: "Isaiah opens his prophecies with a personal invitation directly from the Lord. The Atonement of Jesus Christ cleanses and restores us completely.",
+		reflection: "What burden or past mistake can you turn over to the Savior today?",
+		action: "Read Isaiah 1:16–19 and write down one change you feel inspired to make.",
+		prayer: "Thank Heavenly Father specifically for the gift of His Son's Atonement.",
+		media: "Old Testament Stories: 'Chapter 36: Isaiah the Prophet'"
+	  },
+	  "2026-09-15": {
+		focus: "Sanctuary in the Lord's House",
+		scripture: "Isaiah 2:3 — \"And many people shall go and say, Come ye, and let us go up to the mountain of the LORD, to the house of the God of Jacob; and he will teach us of his ways...\"",
+		insight: "Isaiah foresaw temples bringing light and peace. In a noisy world, the temple offers refuge where we align our minds with God.",
+		reflection: "How can you bring more 'temple peace' into your home environment today?",
+		action: "Display a picture of a temple in your home or schedule your next temple visit.",
+		prayer: "Pray for a family member or friend who is currently seeking peace.",
+		media: "Video: 'Temples: The House of the Lord'"
+	  },
+	  "2026-09-16": {
+		focus: "Emmanuel — God With Us",
+		scripture: "Isaiah 7:14 — \"Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.\"",
+		insight: "'Emmanuel' means 'God with us.' Jesus is not a distant observer; He is intimately near us in our daily efforts and struggles.",
+		reflection: "When did you feel God's presence in your life recently?",
+		action: "Read Matthew 1:21–23 and text a family member why you appreciate the Savior.",
+		prayer: "Offer a short silent prayer midday acknowledging God's presence.",
+		media: "Gospel Art: 'The Prophesied Messiah'"
+	  },
+	  "2026-09-17": {
+		focus: "Sacred Titles of the Savior",
+		scripture: "Isaiah 9:6 — \"For unto us a child is born... and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.\"",
+		insight: "Each title describes a specific way Jesus helps us: Counsellor for decisions, Prince of Peace for anxiety.",
+		reflection: "Which title of Jesus Christ do you need most in your life today?",
+		action: "Write one title on a note or phone lock screen to ponder throughout the day.",
+		prayer: "Address Jesus using this specific title during your prayer today.",
+		media: "Special Video Clip: 'The Living Christ: Testimony of the Apostles'"
+	  },
+	  "2026-09-18": {
+		focus: "Transforming Conflict into Peace",
+		scripture: "Isaiah 2:4 — \"...and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up sword against nation...\"",
+		insight: "Plowshares cultivate growth. We beat 'swords' into 'plowshares' when we replace sharp words with patient answers.",
+		reflection: "What sharp reaction or frustration can you lay aside today?",
+		action: "Intentionally respond with gentleness during a challenging conversation.",
+		prayer: "Pray for the spirit of a peacemaker in your conversations today.",
+		media: "General Conference Message: 'Peacemakers Needed'"
+	  },
+	  "2026-09-19": {
+		focus: "Drawing Water from Salvation's Wells",
+		scripture: "Isaiah 12:3 — \"Therefore with joy shall ye draw water out of the wells of salvation.\"",
+		insight: "Daily habits like scripture reading and prayer are how we draw living water from the Savior's inexhaustible well.",
+		reflection: "Which daily spiritual habit gives you the greatest sense of peace?",
+		action: "Listen to or sing a favorite hymn of gratitude from the Sacred Music app.",
+		prayer: "Offer a prayer composed entirely of thanks without asking for anything.",
+		media: "Hymn: 'I Believe in Christ' (Sacred Music)"
+	  },
+	  "2026-09-20": {
+		focus: "An Ensign for the Nations",
+		scripture: "Isaiah 11:12 — \"And he shall set up an ensign for the nations, and shall assemble the outcasts of Israel...\"",
+		insight: "An ensign is a banner raised to bring people together. When we live with love and faith, we help gather God's children.",
+		reflection: "How can your family stand as a banner of faith and kindness in your community?",
+		action: "Share an uplifting spiritual insight with a friend or family member today.",
+		prayer: "Pray for missionaries throughout the world and those they are teaching.",
+		media: "Short Video: 'Gathering Scattered Israel'"
+	  },
+
+	  // --- WEEK 2: Sep 21–27 (Isaiah 13–14; 24–30; 35: "A Refuge from the Storm") ---
+	  "2026-09-21": {
+		focus: "A Shelter from Life's Storms",
+		scripture: "Isaiah 25:4 — \"For thou hast been a strength to the poor, a strength to the needy in his distress, a refuge from the storm, a shadow from the heat...\"",
+		insight: "God does not always prevent life's storms, but He promises to be a refuge within them through His grace and loving guidance.",
+		reflection: "In what area of your life do you need to seek shelter in the Savior right now?",
+		action: "Read Isaiah 25:1–4 and list three ways God has shielded you in past trials.",
+		prayer: "Ask Heavenly Father for comfort and strength during a current challenge.",
+		media: "Gospel Art: 'Christ Calming the Storm'"
+	  },
+	  "2026-09-22": {
+		focus: "Swallowing Up Death in Victory",
+		scripture: "Isaiah 25:8 — \"He will swallow up death in victory; and the Lord GOD will wipe away tears from off all faces...\"",
+		insight: "Isaiah looks ahead to Christ's ultimate victory over sorrow and death. No grief is permanent in the light of the Resurrection.",
+		reflection: "How does knowledge of the Resurrection bring comfort to your daily living?",
+		action: "Reach out to someone who has recently lost a loved one with a kind message.",
+		prayer: "Express gratitude for the Resurrection and the promise of eternal life.",
+		media: "Video: 'He Will Wipe Away All Tears'"
+	  },
+	  "2026-09-23": {
+		focus: "Perfect Peace Through Trust",
+		scripture: "Isaiah 26:3 — \"Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.\"",
+		insight: "Peace is not the absence of trouble; it is keeping our minds anchored on Jesus Christ regardless of surroundings.",
+		reflection: "What distraction is pulling your focus away from the Savior's peace?",
+		action: "Take a 5-minute technology break today to reflect on Proverbs 3:5–6.",
+		prayer: "Pray for mental clarity and stillness during your busiest moments today.",
+		media: "Audio: 'Peace in Christ' (Youth Theme)"
+	  },
+	  "2026-09-24": {
+		focus: "Line Upon Line Learning",
+		scripture: "Isaiah 28:10 — \"For precept must be upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little...\"",
+		insight: "Spiritual growth happens incrementally. God teaches us step-by-step rather than overwhelming us all at once.",
+		reflection: "What small spiritual habit have you developed recently that is making a difference?",
+		action: "Identify one small daily habit to improve your spiritual learning this week.",
+		prayer: "Thank God for His patience with your line-upon-line learning process.",
+		media: "Video: 'Pattern of Light: Spirit of Revelation'"
+	  },
+	  "2026-09-25": {
+		focus: "A Voice Behind Thee",
+		scripture: "Isaiah 30:21 — \"And thine ears shall hear a word behind thee, saying, This is the way, walk ye in it, when ye turn to the right hand, and when ye turn to the left.\"",
+		insight: "The Holy Ghost often acts like a gentle guide, quietly steering us back on track whenever we begin to drift.",
+		reflection: "How do you best recognize the promptings of the Holy Ghost in your life?",
+		action: "Act immediately on the first good spiritual impression you feel today.",
+		prayer: "Pray for open ears and a humble heart to follow the Spirit's promptings.",
+		media: "Video Clip: 'Hear Him' (President Russell M. Nelson)"
+	  },
+	  "2026-09-26": {
+		focus: "The Desert Shall Blossom as the Rose",
+		scripture: "Isaiah 35:1 — \"The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.\"",
+		insight: "Isaiah promises that dry, barren places will bloom. God can bring joy and renewal to the most difficult situations.",
+		reflection: "Where in your life do you feel spiritually dry, and how can Christ refresh it?",
+		action: "Read Isaiah 35:1–6 and write down one hope you have for your spiritual future.",
+		prayer: "Ask God to bring spiritual growth into an area of your life that feels challenging.",
+		media: "Gospel Art: 'Pioneer Journey & Wilderness Blooming'"
+	  },
+	  "2026-09-27": {
+		focus: "Strengthening Feeble Knees",
+		scripture: "Isaiah 35:3–4 — \"Strengthen ye the weak hands, and confirm the feeble knees. Say to them that are of a fearful heart, Be strong, fear not...\"",
+		insight: "Discipleship involves looking around to lift others who are tired, fearful, or struggling.",
+		reflection: "Who in your circle needs a word of encouragement or a helping hand today?",
+		action: "Perform an anonymous act of service for a family member or neighbor.",
+		prayer: "Ask Heavenly Father to guide you to someone who needs lifting today.",
+		media: "Video: 'Lift Up the Hands Which Hang Down'"
+	  },
+
+	  // --- WEEK 3: Sep 28–Oct 4 (Isaiah 40–49: "Comfort Ye My People") ---
+	  "2026-09-28": {
+		focus: "Comfort and Gentle Guidance",
+		scripture: "Isaiah 40:1,11 — \"Comfort ye, comfort ye my people, saith your God... He shall feed his flock like a shepherd: he shall gather the lambs with his arm...\"",
+		insight: "Jesus Christ cares for us with the gentle attentiveness of a shepherd who knows every single lamb by name.",
+		reflection: "How have you felt the Shepherd's tender care in your life recently?",
+		action: "Read Isaiah 40:1–11 and highlight words that bring you comfort.",
+		prayer: "Thank the Savior for His tender loving-kindness and personal care.",
+		media: "Gospel Art: 'The Good Shepherd'"
+	  },
+	  "2026-09-29": {
+		focus: "Renewing Strength Like Eagles",
+		scripture: "Isaiah 40:31 — \"But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.\"",
+		insight: "'Waiting upon the Lord' means trusting His timing and serving faithfully while we await His promises.",
+		reflection: "In what area of your life are you currently learning to wait on the Lord's timing?",
+		action: "Take a few minutes to rest spiritually and meditate on Isaiah 40:28–31.",
+		prayer: "Ask for patience and renewed energy as you wait upon the Lord.",
+		media: "Audio/Hymn: 'How Firm a Foundation'"
+	  },
+	  "2026-09-30": {
+		focus: "Fear Not, I Will Uphold Thee",
+		scripture: "Isaiah 41:10 — \"Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.\"",
+		insight: "When fear threatens to paralyze us, God promises not just to walk beside us, but to actively uphold us.",
+		reflection: "What fear can you consciously choose to hand over to God today?",
+		action: "Memorize or write down Isaiah 41:10 on a card to carry with you today.",
+		prayer: "Pray for courage to replace fear with faith in God's promises.",
+		media: "Video: 'Fear Not: I Am With Thee'"
+	  },
+	  "2026-10-01": {
+		focus: "A Light to the Gentiles",
+		scripture: "Isaiah 42:6 — \"...and will hold thine hand, and will keep thee, and give thee for a covenant of the people, for a light of the Gentiles;\"",
+		insight: "As covenant followers of Christ, we are called to hold up His light to a world in need of hope.",
+		reflection: "How can your everyday attitude reflect the Savior's light to those around you?",
+		action: "Smile and offer a genuine compliment to three people you interact with today.",
+		prayer: "Ask God to help your life reflect Christ's love to everyone you meet.",
+		media: "Video Clip: 'Let Your Light So Shine'"
+	  },
+	  "2026-10-02": {
+		focus: "I Have Redeemed Thee, Thou Art Mine",
+		scripture: "Isaiah 43:1 — \"...Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine.\"",
+		insight: "You belong to God. He knows your personal name and paid a supreme price for your redemption.",
+		reflection: "How does knowing you belong to God change your sense of self-worth?",
+		action: "Write down three divine qualities you know God has blessed you with.",
+		prayer: "Thank Heavenly Father for your divine identity as His child.",
+		media: "Special Video: 'Child of God' (Church Media Library)"
+	  },
+	  "2026-10-03": {
+		focus: "Blotting Out Transgressions",
+		scripture: "Isaiah 44:22 — \"I have blotted out, as a thick cloud, thy transgressions, and, as a cloud, thy sins: return unto me; for I have redeemed thee.\"",
+		insight: "Just as the sun sweeps away thick morning clouds, Christ's grace completely clears away our repented mistakes.",
+		reflection: "Are you allowing Christ's grace to sweep away old regrets?",
+		action: "Read Isaiah 44:21–23 and ponder the joy of complete forgiveness.",
+		prayer: "Pray for the faith to accept God's forgiveness and forgive yourself.",
+		media: "Video: 'Repentance: A Joyful Choice'"
+	  },
+	  "2026-10-04": {
+		focus: "Graven Upon the Palms of His Hands",
+		scripture: "Isaiah 49:15–16 — \"...yet will I not forget thee. Behold, I have graven thee upon the palms of my hands...\"",
+		insight: "A mother may forget her child before God forgets you. The nail prints in the Savior's hands are a perpetual token of His love.",
+		reflection: "Why is it important to remember that Jesus will never forget or abandon you?",
+		action: "Look at a picture of the resurrected Savior and ponder His love for you.",
+		prayer: "Express heartfelt gratitude to Jesus for His eternal commitment to you.",
+		media: "Gospel Art: 'Hands of the Savior'"
+	  },
+
+	  // --- WEEK 4: Oct 5–11 (Isaiah 50–57: "He Hath Borne Our Griefs") ---
+	  "2026-10-05": {
+		focus: "How Beautiful Upon the Mountains",
+		scripture: "Isaiah 52:7 — \"How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good...\"",
+		insight: "Those who share the gospel of Jesus Christ bring true peace and glad tidings to a world in distress.",
+		reflection: "Who brought the good tidings of the gospel into your life?",
+		action: "Send a message of gratitude to someone who strengthened your faith.",
+		prayer: "Thank God for teachers, missionaries, and leaders who shared His truth with you.",
+		media: "Video: 'Good Tidings of Great Joy'"
+	  },
+	  "2026-10-06": {
+		focus: "Despised and Rejected of Men",
+		scripture: "Isaiah 53:3 — \"He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him...\"",
+		insight: "Jesus understands human suffering because He personally experienced rejection, sorrow, and deep grief.",
+		reflection: "How does knowing Jesus was 'acquainted with grief' help you during loneliness?",
+		action: "Read Isaiah 53:1–4 slowly and ponder the Savior's willingness to suffer for you.",
+		prayer: "Pour out your heart to the Lord about any personal sorrow you are carrying.",
+		media: "The Messiah Video Series: 'Isaiah 53 Prophecies'"
+	  },
+	  "2026-10-07": {
+		focus: "Wounded for Our Transgressions",
+		scripture: "Isaiah 53:5 — \"But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.\"",
+		insight: "Christ took our pain, punishment, and infirmities upon Himself so that we could be made spiritually whole.",
+		reflection: "In what way do you need the Savior's healing power in your life today?",
+		action: "Write a journal entry about what 'with his stripes we are healed' means to you.",
+		prayer: "Ask Jesus Christ for His healing grace in your emotional or physical life.",
+		media: "Gospel Art: 'Gethsemane'"
+	  },
+	  "2026-10-08": {
+		focus: "All We Like Sheep Have Gone Astray",
+		scripture: "Isaiah 53:6 — \"All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all.\"",
+		insight: "We all stumble and drift at times, but the Good Shepherd actively seeks us out and bears our burdens.",
+		reflection: "When have you felt the Savior guide you back after wandering?",
+		action: "Reach out with kindness to a family member who has drifted from Church activity.",
+		prayer: "Pray for those who feel lost or distant from God right now.",
+		media: "Video: 'Finding the Lost Sheep'"
+	  },
+	  "2026-10-09": {
+		focus: "Everlasting Kindness",
+		scripture: "Isaiah 54:10 — \"For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee, neither shall the covenant of my peace be removed...\"",
+		insight: "Earthly things may fail or crumble, but God's covenant love and kindness toward you are immovable.",
+		reflection: "How does God's unshakeable covenant commitment give you security?",
+		action: "Read Isaiah 54:7–10 and underline words describing God's mercy.",
+		prayer: "Recommit your heart to keeping your baptismal and temple covenants.",
+		media: "Video Clip: 'Covenant Belonging' (Elder Gerrit W. Gong)"
+	  },
+	  "2026-10-10": {
+		focus: "Ho, Every One That Thirsteth",
+		scripture: "Isaiah 55:1 — \"Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat... without money and without price.\"",
+		insight: "The spiritual blessings of Jesus Christ are free to all who sincerely hunger and thirst after righteousness.",
+		reflection: "What worldliness are you spending energy on that does not truly satisfy your soul?",
+		action: "Replace 15 minutes of media consumption today with uplifting scripture study.",
+		prayer: "Ask God to increase your spiritual appetite for scripture and prayer.",
+		media: "Video: 'The Woman at the Well'"
+	  },
+	  "2026-10-11": {
+		focus: "Higher Ways and Higher Thoughts",
+		scripture: "Isaiah 55:8–9 — \"For my thoughts are not your thoughts, neither are your ways my ways, saith the LORD. For as the heavens are higher than the earth, so are my ways higher...\"",
+		insight: "God sees the complete picture from eternity. When His plans differ from ours, we can trust His higher vision.",
+		reflection: "In what situation do you need to surrender your plan for God's higher way?",
+		action: "Identify an unanswered question and exercise faith by trusting God's wisdom.",
+		prayer: "Pray: 'Father, not my will, but thine be done in my life today.'",
+		media: "Message Clip: 'Trust in the Lord's Timing'"
+	  },
+
+	  // --- WEEK 5: Oct 12–18 (Isaiah 58–66: "The Redeemer Shall Come to Zion") ---
+	  "2026-10-12": {
+		focus: "The True Fast",
+		scripture: "Isaiah 58:6 — \"Is not this the fast that I have chosen? to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free...\"",
+		insight: "Fasting is not merely going without food; it is a powerful spiritual exercise designed to break bondage and bless others.",
+		reflection: "How can you make your fasts more purposeful and focused on serving others?",
+		action: "Plan your next fast around a specific spiritual purpose or person in need.",
+		prayer: "Pray that your fast offerings will relieve the suffering of the poor.",
+		media: "Video: 'The Blessings of Fast Offering'"
+	  },
+	  "2026-10-13": {
+		focus: "Light Rising in Obscurity",
+		scripture: "Isaiah 58:8,10 — \"Then shall thy light break forth as the morning... and thy darkness be as the noon day:\"",
+		insight: "When we feed the hungry and lift the afflicted, God promises that our personal darkness will turn into bright light.",
+		reflection: "How has serving someone else helped bring light during your own hard times?",
+		action: "Donate food or time to a local pantry or community service project.",
+		prayer: "Ask the Lord to reveal ways you can relieve someone's heavy burden today.",
+		media: "Short Film: 'Generous Fast Offerings'"
+	  },
+	  "2026-10-14": {
+		focus: "Call the Sabbath a Delight",
+		scripture: "Isaiah 58:13–14 — \"If thou turn away thy foot from the sabbath... and call the sabbath a delight, the holy of the LORD, honourable... Then shalt thou delight thyself in the LORD...\"",
+		insight: "The Sabbath is a sign between us and God. When we honor it, it transforms from a day of 'rules' into a day of joy.",
+		reflection: "What changes can you make to make the Sabbath a true delight for your family?",
+		action: "Prepare ahead this week so Saturday chores don't spill over into Sunday rest.",
+		prayer: "Thank Heavenly Father for the gift and refuge of the Sabbath day.",
+		media: "Video: 'The Sabbath Is a Delight'"
+	  },
+	  "2026-10-15": {
+		focus: "Anointed to Bind Up the Brokenhearted",
+		scripture: "Isaiah 61:1 — \"The Spirit of the Lord GOD is upon me; because the LORD hath anointed me to preach good tidings unto the meek... to bind up the brokenhearted...\"",
+		insight: "Jesus quoted this verse in Nazareth to announce His divine mission. He came specifically to heal broken hearts.",
+		reflection: "How has Jesus Christ mended a broken heart in your life or family?",
+		action: "Read Isaiah 61:1–3 and Luke 4:16–21 together.",
+		prayer: "Pray for someone who is experiencing emotional pain or heartbreak right now.",
+		media: "Gospel Art: 'Jesus Reading Scriptures in Nazareth'"
+	  },
+	  "2026-10-16": {
+		focus: "Beauty for Ashes",
+		scripture: "Isaiah 61:3 — \"To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness...\"",
+		insight: "Christ specializes in restoration. He takes our ruin, mistakes, and sorrow (ashes) and converts them into beauty.",
+		reflection: "Where have you seen the Lord turn a trial into a spiritual blessing?",
+		action: "Write down a testimony of how God brought good out of a past hardship.",
+		prayer: "Ask God to replace your feelings of heaviness with peace and praise.",
+		media: "Message Video: 'Beauty for Ashes' (General Conference)"
+	  },
+	  "2026-10-17": {
+		focus: "The Garments of Salvation",
+		scripture: "Isaiah 61:10 — \"I will greatly rejoice in the LORD... for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness...\"",
+		insight: "Through sacred covenants, God clothes us in His righteousness and protects us against spiritual dangers.",
+		reflection: "How do your sacred covenants influence the daily choices you make?",
+		action: "Review your patriarchal blessing or baptismal covenants today.",
+		prayer: "Express gratitude for holy temple covenants and the protection they offer.",
+		media: "Gospel Art: 'Temple Covenants and White Garments'"
+	  },
+	  "2026-10-18": {
+		focus: "New Heavens and a New Earth",
+		scripture: "Isaiah 65:17,24 — \"For, behold, I create new heavens and a new earth... And it shall come to pass, that before they call, I will answer; and while they are yet speaking, I will hear.\"",
+		insight: "God promises a glorious future millennial era where peace reigns and He answers our prayers instantly.",
+		reflection: "How does anticipating the Second Coming of Christ inspire hope in your present life?",
+		action: "Discuss as a family what life will be like when Jesus reigns personally on earth.",
+		prayer: "Pray: 'Thy kingdom come, Thy will be done on earth as it is in heaven.'",
+		media: "Video: 'Preparing for the Second Coming'"
+	  },
+
+	  // --- WEEK 6: Oct 19–25 (Jeremiah 1–20: "Before I Formed Thee in the Belly I Knew Thee") ---
+	  "2026-10-19": {
+		focus: "Known Before Birth",
+		scripture: "Jeremiah 1:5 — \"Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations.\"",
+		insight: "Your life did not start at birth. God knew you in the premortal life and prepared you for noble purposes on earth.",
+		reflection: "How does knowing God knew you before birth give purpose to your existence?",
+		action: "Write a note to a young person reminding them of their divine premortal origin.",
+		prayer: "Thank God for calling and preparing you for your specific mission in life.",
+		media: "Gospel Art: 'Premortal Life & Jeremiah's Calling'"
+	  },
+	  "2026-10-20": {
+		focus: "Say Not, I Am a Child",
+		scripture: "Jeremiah 1:7–8 — \"...Say not, I am a child: for thou shalt go to all that I shall send thee... Be not afraid of their faces: for I am with thee to deliver thee...\"",
+		insight: "When God calls us to a task, our age or perceived inadequacy does not matter; His divine backing is sufficient.",
+		reflection: "What calling or duty feels overwhelming to you, and how can God help?",
+		action: "Accept or fulfill a church assignment without feeling inadequate.",
+		prayer: "Ask for confidence to do whatever the Lord asks of you today.",
+		media: "Video: 'Thou Art a Chosen Vessel'"
+	  },
+	  "2026-10-21": {
+		focus: "Fountains of Living Waters",
+		scripture: "Jeremiah 2:13 — \"For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.\"",
+		insight: "Worldly pleasures are like broken cisterns that quickly leak dry; only Jesus Christ is the fountain of lasting water.",
+		reflection: "What 'broken cisterns' (false sources of happiness) do people rely on today?",
+		action: "Identify one habit that drains your spirit and replace it with scripture study.",
+		prayer: "Ask Heavenly Father to fill your heart with the living water of the Holy Spirit.",
+		media: "Video Segment: 'Living Water in the Desert'"
+	  },
+	  "2026-10-22": {
+		focus: "Give You Pastors According to Mine Heart",
+		scripture: "Jeremiah 3:15 — \"And I will give you pastors according to mine heart, which shall feed you with knowledge and understanding.\"",
+		insight: "God calls prophets, apostles, and local leaders to feed us with true doctrine and protect us from error.",
+		reflection: "What recent counsel from the First Presidency has fed your spirit?",
+		action: "Read or listen to one address from the most recent General Conference.",
+		prayer: "Pray for the President of the Church, apostles, and your local bishop.",
+		media: "General Conference Video: First Presidency Address"
+	  },
+	  "2026-10-23": {
+		focus: "Stand Ye in the Ways and Ask for the Old Paths",
+		scripture: "Jeremiah 6:16 — \"Thus saith the LORD, Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls...\"",
+		insight: "When modern trends pull us away, safety lies in walking the 'old paths' of eternal covenant truths.",
+		reflection: "Which gospel truth provides the strongest anchor when cultural opinions shift?",
+		action: "Teach a family member or friend about a foundational gospel principle today.",
+		prayer: "Pray for steadfastness to remain on the covenant path regardless of trends.",
+		media: "Video Clip: 'The Covenant Path' (President Nelson)"
+	  },
+	  "2026-10-24": {
+		focus: "Amend Your Ways and Your Doings",
+		scripture: "Jeremiah 7:3 — \"Thus saith the LORD of hosts, the God of Israel, Amend your ways and your doings, and I will cause you to dwell in this place.\"",
+		insight: "Genuine repentance is not just feeling sorry; it is actively amending our actions and aligning with God.",
+		reflection: "What is one 'way or doing' in your routine that needs amending?",
+		action: "Apologize to someone if you have been impatient or wrong in your conduct.",
+		prayer: "Ask God to show you weak spots in your character so you can amend them.",
+		media: "Video: 'Repentance Brings Joy'"
+	  },
+	  "2026-10-25": {
+		focus: "His Word Was as a Burning Fire in My Bones",
+		scripture: "Jeremiah 20:9 — \"...his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing, and I could not stay.\"",
+		insight: "Jeremiah faced intense persecution, yet testimony burned so brightly inside him that he could not stay silent.",
+		reflection: "Does your testimony feel like a warm, burning conviction inside you?",
+		action: "Bear your testimony of Jesus Christ in writing or conversation today.",
+		prayer: "Pray that the Holy Ghost will kindle a burning testimony in your heart.",
+		media: "Gospel Art: 'Jeremiah Testifying in Jerusalem'"
+	  },
+
+	  // --- WEEK 7: Oct 26–Nov 1 (Jeremiah 30–36; Ezekiel 1–34: "I Will Put My Law in Their Inward Parts") ---
+	  "2026-10-26": {
+		focus: "An Everlasting Love",
+		scripture: "Jeremiah 31:3 — \"The LORD hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.\"",
+		insight: "God's love for you is eternal. He draws you toward Him through gentleness and loving-kindness.",
+		reflection: "How have you felt God's 'loving-kindness' drawing you closer to Him?",
+		action: "Write Jeremiah 31:3 in your journal and ponder God's eternal love for you.",
+		prayer: "Thank Heavenly Father for loving you with an everlasting love.",
+		media: "Audio/Hymn: 'Love One Another'"
+	  },
+	  "2026-10-27": {
+		focus: "Law Written in Our Hearts",
+		scripture: "Jeremiah 31:33 — \"...I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.\"",
+		insight: "True conversion happens when gospel living moves from an external list of rules to an inward change of heart.",
+		reflection: "Is your obedience motivated by outward routine or an inward love for Christ?",
+		action: "Evaluate your motivation for daily spiritual habits and focus on doing them out of love.",
+		prayer: "Pray: 'Father, write Thy holy law upon my heart and change my desires.'",
+		media: "Video: 'A New Heart and Spirit'"
+	  },
+	  "2026-10-28": {
+		focus: "Call Unto Me, and I Will Answer Thee",
+		scripture: "Jeremiah 33:3 — \"Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not.\"",
+		insight: "God invites us to ask Him bold, faithful questions in prayer, promising revelation beyond our current knowledge.",
+		reflection: "What 'great and mighty thing' are you seeking spiritual light about right now?",
+		action: "Set aside 10 minutes for a dedicated prayer with a notebook ready to write thoughts.",
+		prayer: "Ask specific questions in prayer and pause in silence to listen for answers.",
+		media: "Video Clip: 'Patterns of Light: Spirit of Revelation'"
+	  },
+	  "2026-10-29": {
+		focus: "A Watchman unto the House of Israel",
+		scripture: "Ezekiel 3:17 — \"Son of man, I have made thee a watchman unto the house of Israel: therefore hear the word at my mouth, and give them warning from me.\"",
+		insight: "Prophets act like watchmen on a city tower, warning us of spiritual dangers long before we can see them.",
+		reflection: "What current warning from Church leaders protects us from modern danger?",
+		action: "Review recent guidance from the prophet on social media or family life.",
+		prayer: "Pray for a willing heart to follow the prophet's warnings without hesitation.",
+		media: "Gospel Art: 'Ezekiel as Watchman on the Tower'"
+	  },
+	  "2026-10-30": {
+		focus: "When the Wicked Turneth from His Sin",
+		scripture: "Ezekiel 18:21–22 — \"But if the wicked will turn from all his sins... all his transgressions that he hath committed, they shall not be mentioned unto him...\"",
+		insight: "God keeps no record of repented sins. When we turn to Him, past transgressions are completely forgiven.",
+		reflection: "Why is it important to remember that God does not hold repented past sins against us?",
+		action: "Forgive someone who has genuinely tried to apologize or make amends with you.",
+		prayer: "Thank God for His complete mercy and the freshness of a clean start.",
+		media: "Video: 'The Joy of Becoming Clean'"
+	  },
+	  "2026-10-31": {
+		focus: "A New Heart and a New Spirit",
+		scripture: "Ezekiel 36:26 — \"A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh...\"",
+		insight: "The Atonement softens hard, cynical hearts and replaces them with tender hearts responsive to God.",
+		reflection: "Where has your heart felt hardened or callous, and how can Christ soften it?",
+		action: "Do something kind for a person you have felt friction with lately.",
+		prayer: "Ask Heavenly Father to take away any stoniness in your heart and fill it with love.",
+		media: "Video: 'A Mighty Change of Heart'"
+	  },
+	  "2026-11-01": {
+		focus: "I Will Seek That Which Was Lost",
+		scripture: "Ezekiel 34:12,16 — \"...so will I seek out my sheep, and will deliver them... I will seek that which was lost, and bring again that which was driven away...\"",
+		insight: "Jesus Christ is the true Shepherd who actively searches for lost, wounded, or driven-away sheep.",
+		reflection: "How can you participate in the Savior's work of finding and lifting lost sheep?",
+		action: "Reach out to a neighbor or ward member you haven't seen in a while.",
+		prayer: "Pray for the Good Shepherd to use you as an instrument to rescue someone.",
+		media: "Gospel Art: 'The Lost Lamb Restored'"
+	  },
+
+	  // --- WEEK 8: Nov 2–8 (Ezekiel 37; 47: "They Shall Be One in Mine Hand") ---
+	  "2026-11-02": {
+		focus: "Can These Bones Live?",
+		scripture: "Ezekiel 37:3,5 — \"And he said unto me, Son of man, can these bones live?... Thus saith the Lord GOD unto these bones; Behold, I will cause breath to enter into you, and ye shall live:\"",
+		insight: "No matter how dead or hopeless a situation or spiritual state appears, God can breathe new life into it.",
+		reflection: "What situation in your life feels like 'dry bones' that needs God's spirit breathed into it?",
+		action: "Read Ezekiel 37:1–10 and ponder God's power to resurrect and restore.",
+		prayer: "Ask God to breathe spiritual life and hope into a difficult area of your life.",
+		media: "Video: 'Ezekiel and the Valley of Dry Bones'"
+	  },
+	  "2026-11-03": {
+		focus: "The Stick of Judah and the Stick of Joseph",
+		scripture: "Ezekiel 37:16,19 — \"...Take thee one stick, and write upon it, For Judah... then take another stick, and write upon it, For Joseph... and make them one stick...\"",
+		insight: "Ezekiel prophesied that the Bible (stick of Judah) and the Book of Mormon (stick of Joseph) would join together.",
+		reflection: "How has studying the Book of Mormon alongside the Bible strengthened your faith?",
+		action: "Read a passage from the Book of Mormon that clarifies an Old Testament prophecy.",
+		prayer: "Thank God for the Book of Mormon as a second witness of Jesus Christ.",
+		media: "Video: 'The Book of Mormon & Bible Joined Together'"
+	  },
+	  "2026-11-04": {
+		focus: "One Nation in the Land",
+		scripture: "Ezekiel 37:22 — \"And I will make them one nation in the land upon the mountains of Israel; and one king shall be king to them all...\"",
+		insight: "Under the reign of Jesus Christ, divisions and rivalries will cease as we become united under one King.",
+		reflection: "How can you foster greater unity within your family, ward, or community?",
+		action: "Build a bridge of understanding with someone who has a different viewpoint.",
+		prayer: "Pray for the spirit of Zion—one heart and one mind—in your home.",
+		media: "Video Clip: 'Unity in Christ'"
+	  },
+	  "2026-11-05": {
+		focus: "Waters Issuing from the Sanctuary",
+		scripture: "Ezekiel 47:1 — \"Afterward he brought me again unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward...\"",
+		insight: "Ezekiel saw healing water flowing from the temple, growing deeper and bringing life wherever it went.",
+		reflection: "How have temple blessings brought spiritual healing into your life?",
+		action: "Find a quiet moment to read Ezekiel 47:1–9 and contemplate temple worship.",
+		prayer: "Pray for temple workers and patrons throughout the world.",
+		media: "Gospel Art: 'Healing Waters Flowing from the Temple'"
+	  },
+	  "2026-11-06": {
+		focus: "Waters to Swim In",
+		scripture: "Ezekiel 47:5 — \"...and it was a river that I could not pass over: for the waters were risen, waters to swim in, a river that could not be passed over.\"",
+		insight: "The blessings of God's grace and temple covenants are not shallow; they are deep waters that abundantly sustain us.",
+		reflection: "Are you wading at the ankles of gospel living or swimming in its depths?",
+		action: "Deepen your daily study time by 10 minutes to immerse yourself more fully.",
+		prayer: "Ask Heavenly Father to deepen your spiritual capacity and understanding.",
+		media: "Video Segment: 'The Sacred Depth of Temple Covenants'"
+	  },
+	  "2026-11-07": {
+		focus: "Every Thing Shall Live Whither the River Cometh",
+		scripture: "Ezekiel 47:9 — \"And it shall come to pass, that every thing that liveth... whither the river cometh, shall live: and there shall be a very great multitude of fish...\"",
+		insight: "Wherever the gospel of Jesus Christ flows, spiritual health, vitality, and fruitfulness follow.",
+		reflection: "Where have you seen the gospel bring life to an individual or family?",
+		action: "Share a spiritual story with a friend about how the gospel brought joy to your family.",
+		prayer: "Ask God to let the river of His Spirit flow freely through your home.",
+		media: "Video: 'The Living Waters of Jesus Christ'"
+	  },
+	  "2026-11-08": {
+		focus: "The Lord Is There",
+		scripture: "Ezekiel 48:35 — \"...and the name of the city from that day shall be, The LORD is there.\"",
+		insight: "The ultimate promise of Zion and holy temples is presence: 'The Lord is there.' He desires to dwell among us.",
+		reflection: "How can you make your home a place where people feel 'The Lord is there'?",
+		action: "Remove one source of contention or media noise from your home environment.",
+		prayer: "Invite the Lord's presence into your home and heart today.",
+		media: "Gospel Art: 'Zion City of Peace'"
+	  },
+
+	  // --- WEEK 9: Nov 9–15 (Daniel 1–6: "There Is No Other God That Can Deliver") ---
+	  "2026-11-09": {
+		focus: "Purposing in Your Heart",
+		scripture: "Daniel 1:8 — \"But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank...\"",
+		insight: "Daniel made up his mind *before* the pressure arrived. Pre-deciding to obey makes standing firm easier.",
+		reflection: "What standards have you 'purposed in your heart' never to compromise?",
+		action: "Re-commit to a personal health or moral standard in your life.",
+		prayer: "Ask Heavenly Father for strength to stand firm when standards are tested.",
+		media: "Old Testament Stories: 'Daniel and the King's Food'"
+	  },
+	  "2026-11-10": {
+		focus: "Ten Times Better in Wisdom",
+		scripture: "Daniel 1:20 — \"And in all matters of wisdom and understanding, that the king inquired of them, he found them ten times better than all the magicians and astrologers...\"",
+		insight: "Obeying God's health and spiritual laws brings mental clarity, wisdom, and spiritual discernment.",
+		reflection: "How has living the Word of Wisdom blessed your physical and mental health?",
+		action: "Read Doctrine and Covenants 89 alongside Daniel 1.",
+		prayer: "Thank God for divine health laws and physical blessings.",
+		media: "Video: 'Blessings of the Word of Wisdom'"
+	  },
+	  "2026-11-11": {
+		focus: "A Stone Cut Out Without Hands",
+		scripture: "Daniel 2:44–45 — \"...and in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed... but it shall break in pieces and consume all these kingdoms...\"",
+		insight: "Daniel saw the Church of Jesus Christ in the latter days rolling forth like a stone to fill the whole earth.",
+		reflection: "How can you participate in rolling forth the stone of God's kingdom today?",
+		action: "Share a Church website link or uplifting message on social media.",
+		prayer: "Pray for the steady growth of the Church in nations across the globe.",
+		media: "Video Clip: 'The Stone Cut Out Without Hands'"
+	  },
+	  "2026-11-12": {
+		focus: "Our God Is Able to Deliver Us",
+		scripture: "Daniel 3:17 — \"If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.\"",
+		insight: "Shadrach, Meshach, and Abed-nego possessed absolute confidence in God's power to perform miracles.",
+		reflection: "Do you believe God has the power to deliver you from your trials?",
+		action: "Read Daniel 3:1–18 together as a family.",
+		prayer: "Express total faith in God's power to perform miracles in your life.",
+		media: "Gospel Art: 'Three Hebrews in the Fiery Furnace'"
+	  },
+	  "2026-11-13": {
+		focus: "But If Not...",
+		scripture: "Daniel 3:18 — \"But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.\"",
+		insight: "True faith says: 'God can deliver me—but even if He doesn't in the way I expect, I will still serve Him.'",
+		reflection: "How can you develop 'but if not' faith when prayers aren't answered immediately?",
+		action: "Write down an example of when you stayed faithful despite an unexpected outcome.",
+		prayer: "Pray: 'Father, give me unshakeable faith regardless of the outcome.'",
+		media: "General Conference Message: 'But If Not...' (Elder Dennis B. Neuenschwander)"
+	  },
+	  "2026-11-14": {
+		focus: "No Hurt Upon Them",
+		scripture: "Daniel 3:25 — \"He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God.\"",
+		insight: "Jesus Christ walked with the three young men *inside* the furnace. He stands with us in our hottest trials.",
+		reflection: "When have you felt the Savior walking beside you during a fiery trial?",
+		action: "Reach out to someone going through a tough trial to let them know they aren't alone.",
+		prayer: "Thank the Savior for walking with you in the middle of hard times.",
+		media: "Video: 'Walking Through Fiery Furnaces'"
+	  },
+	  "2026-11-15": {
+		focus: "Shut the Lions' Mouths",
+		scripture: "Daniel 6:22 — \"My God hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me...\"",
+		insight: "Daniel continued his daily habit of prayer three times a day, even when threatened with the lions' den.",
+		reflection: "Is your daily habit of personal prayer consistent regardless of circumstances?",
+		action: "Set a reminder to pray three times deliberately today like Daniel.",
+		prayer: "Pray with deep gratitude for divine protection and angelic help.",
+		media: "Old Testament Stories: 'Daniel in the Lions' Den'"
+	  },
+
+	  // --- WEEK 10: Nov 16–22 (Hosea 1–6; 11; Joel 2–3: "I Will Betroth Thee Unto Me") ---
+	  "2026-11-16": {
+		focus: "Betrothed in Loving-kindness",
+		scripture: "Hosea 2:19 — \"And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies.\"",
+		insight: "God compares His covenant relationship with us to a marriage founded on eternal love, loyalty, and mercy.",
+		reflection: "How does viewing your covenant relationship with God like a marriage change your commitment?",
+		action: "Read Hosea 2:19–20 and write down what covenant loyalty means to you.",
+		prayer: "Express gratitude for the honor of being in a covenant relationship with God.",
+		media: "Gospel Art: 'Covenant Symbolism in Scriptures'"
+	  },
+	  "2026-11-17": {
+		focus: "How Shall I Give Thee Up?",
+		scripture: "Hosea 11:8 — \"How shall I give thee up, Ephraim? how shall I deliver thee, Israel?... mine heart is turned within me, my repentings are kindled together.\"",
+		insight: "Even when Israel was unfaithful, God's heart yearned over them. He is reluctant to abandon His children.",
+		reflection: "How have you felt God's patient refusal to give up on you when you stumbled?",
+		action: "Forgive someone you have been tempted to give up on.",
+		prayer: "Thank Heavenly Father for His endless patience and reluctance to let you go.",
+		media: "Video Clip: 'God's Unfailing Love'"
+	  },
+	  "2026-11-18": {
+		focus: "Rend Your Heart and Not Your Garments",
+		scripture: "Joel 2:13 — \"And rend your heart, and not your garments, and turn unto the LORD your God: for he is gracious and merciful, slow to anger, and of great kindness...\"",
+		insight: "God seeks genuine inward sorrow (a broken heart) rather than dramatic outward displays of remorse.",
+		reflection: "How do you cultivate sincere, inward humility when repenting?",
+		action: "Engage in a quiet, deeply honest self-examination during evening prayer.",
+		prayer: "Ask God to give you a soft, humble, and truly repentant heart.",
+		media: "Video: 'A Broken Heart and Contrite Spirit'"
+	  },
+	  "2026-11-19": {
+		focus: "Outpouring of the Holy Spirit",
+		scripture: "Joel 2:28 — \"And it shall come to pass afterward, that I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy...\"",
+		insight: "Joel foresaw a latter-day outpouring of revelation and spiritual gifts available to all faithful sons and daughters.",
+		reflection: "In what ways have you seen the Holy Spirit poured out in these modern times?",
+		action: "Record a spiritual experience or dream in your journal today.",
+		prayer: "Pray for a greater outpouring of the Holy Ghost upon your family.",
+		media: "Video: 'The Gift and Power of the Holy Ghost'"
+	  },
+	  "2026-11-20": {
+		focus: "Whosoever Shall Call on the Name of the Lord",
+		scripture: "Joel 2:32 — \"And it shall come to pass, that whosoever shall call on the name of the LORD shall be delivered: for in mount Zion and in Jerusalem shall be deliverance...\"",
+		insight: "Deliverance is not reserved for a select few; 'whosoever' calls upon the Lord in faith will find help.",
+		reflection: "When has calling upon the Lord in prayer brought you swift deliverance?",
+		action: "Share with a teenager or child how prayer has helped you in tough moments.",
+		prayer: "Call upon the Lord for help with a specific concern you face today.",
+		media: "Message Video: 'Call Upon the Lord in Faith'"
+	  },
+	  "2026-11-21": {
+		focus: "The Lord Shall Be the Hope of His People",
+		scripture: "Joel 3:16 — \"The LORD also shall roar out of Zion... and the heavens and the earth shall shake: but the LORD will be the hope of his people, and the strength of the children of Israel.\"",
+		insight: "Even when earthly systems shake around us, the Lord remains the firm strength and hope of His covenant people.",
+		reflection: "Where do you place your ultimate hope when worldly news creates anxiety?",
+		action: "Read Joel 3:16–17 and reflect on the strength that comes from trusting God.",
+		prayer: "Pray for world peace and for those living in areas of conflict.",
+		media: "Video Clip: 'Hope in Christ in Troubled Times'"
+	  },
+	  "2026-11-22": {
+		focus: "Knowledge of God Over Sacrifice",
+		scripture: "Hosea 6:6 — \"For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.\"",
+		insight: "God values genuine love, mercy, and personal knowledge of Him far above empty religious rituals.",
+		reflection: "How can you focus more on knowing God rather than just 'checking off' religious duties?",
+		action: "Spend 10 quiet minutes contemplating who God is and how He feels about you.",
+		prayer: "Pray: 'Father, help me to know Thee and Thy Son, Jesus Christ, more deeply.'",
+		media: "Video: 'This Is Life Eternal: Knowing God'"
+	  },
+
+	  // --- WEEK 11: Nov 23–29 (Amos 3–5; Obadiah: "Seek the Lord, and Ye Shall Live") ---
+	  "2026-11-23": {
+		focus: "Revealing Secrets to His Servants the Prophets",
+		scripture: "Amos 3:7 — \"Surely the Lord GOD will do nothing, but he revealeth his secret unto his servants the prophets.\"",
+		insight: "God does not leave us in the dark. He reveals His plans, warnings, and doctrines to living prophets.",
+		reflection: "Why is having a living prophet on earth today a vital blessing for your family?",
+		action: "Read or re-watch a message from the living prophet today.",
+		prayer: "Thank Heavenly Father for living prophets and apostles who guide us.",
+		media: "Gospel Art: 'Living Apostles and Prophets'"
+	  },
+	  "2026-11-24": {
+		focus: "Prepare to Meet Thy God",
+		scripture: "Amos 4:12 — \"...and because I will do this unto thee, prepare to meet thy god, O Israel.\"",
+		insight: "Life on earth is a probation—a time to prepare to meet God through daily repentance and growth.",
+		reflection: "If you were to meet God today, what progress in your life would bring you gratitude?",
+		action: "Make a quick list of spiritual goals you want to accomplish before the year ends.",
+		prayer: "Ask God to help you use your time wisely today to prepare for eternity.",
+		media: "Video Clip: 'This Life Is the Time to Prepare'"
+	  },
+	  "2026-11-25": {
+		focus: "Seek the Lord, and Ye Shall Live",
+		scripture: "Amos 5:4,6 — \"For thus saith the LORD unto the house of Israel, Seek ye me, and ye shall live... Seek the LORD, and ye shall live...\"",
+		insight: "Seeking God is not a passive activity; it requires energetic searching through scripture, prayer, and service.",
+		reflection: "What does 'seeking the Lord' look like in your daily routine?",
+		action: "Begin your morning by actively seeking the Lord before looking at news or email.",
+		prayer: "Pray with earnest desire to feel God's guiding hand throughout the day.",
+		media: "Audio/Hymn: 'Seek the Lord Early'"
+	  },
+	  "2026-11-26": {
+		focus: "Seek Good, and Not Evil",
+		scripture: "Amos 5:14–15 — \"Seek good, and not evil, that ye may live: and so the LORD, the God of hosts, shall be with you... Hate the evil, and love the good...\"",
+		insight: "Faith requires making clear choices to embrace what is good and distance ourselves from evil influences.",
+		reflection: "How can you cultivate a stronger love for things that are pure and virtuous?",
+		action: "Filter out one media source or app that brings negative energy into your day.",
+		prayer: "Pray for discernment to choose good over evil in all entertainment choices.",
+		media: "Video: 'Virtuous Media Choices'"
+	  },
+	  "2026-11-27": {
+		focus: "Famine of Hearing the Words of the Lord",
+		scripture: "Amos 8:11 — \"Behold, the days come, saith the Lord GOD, that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of the LORD:\"",
+		insight: "Amos foresaw the Great Apostasy—a spiritual famine where divine truth was missing from the earth.",
+		reflection: "How blessed are we to live in a time of spiritual feast through the Restoration?",
+		action: "Feast on the scriptures today with deep gratitude for their availability.",
+		prayer: "Thank God for the restored gospel that ends spiritual famine in our lives.",
+		media: "Video: 'The Great Apostasy and Restoration'"
+	  },
+	  "2026-11-28": {
+		focus: "Saviours Shall Come Up on Mount Zion",
+		scripture: "Obadiah 1:21 — \"And saviours shall come up on mount Zion to judge the mount of Esau; and the kingdom shall be the LORD'S.\"",
+		insight: "Joseph Smith taught that when we do temple work for our deceased ancestors, we act as 'saviors on Mount Zion.'",
+		reflection: "How does performing family history and temple work connect you to your ancestors?",
+		action: "Find one family name or review ancestor stories on FamilySearch today.",
+		prayer: "Pray for opportunities to help perform temple ordinances for your deceased family.",
+		media: "Video: 'Saviors on Mount Zion (Temple Work)'"
+	  },
+	  "2026-11-29": {
+		focus: "Let Judgment Run Down as Waters",
+		scripture: "Amos 5:24 — \"But let judgment run down as waters, and righteousness as a mighty stream.\"",
+		insight: "True worship produces a steady, flowing stream of justice, honesty, and righteous living.",
+		reflection: "Is your daily integrity flowing like a 'mighty stream' in your workplace or home?",
+		action: "Be scrupulously honest and fair in all financial and social dealings today.",
+		prayer: "Pray for the courage to stand for righteousness in all settings.",
+		media: "Video Clip: 'Integrity and Righteous Living'"
+	  },
+
+	  // --- WEEK 12: Nov 30–Dec 6 (Jonah; Micah: "He Delighteth in Mercy") ---
+	  "2026-11-30": {
+		focus: "Arise, Go to Nineveh",
+		scripture: "Jonah 1:2–3 — \"Arise, go to Nineveh, that great city, and cry against it... But Jonah rose up to flee unto Tarshish from the presence of the LORD...\"",
+		insight: "Running from God's callings or promptings never leads to peace; it usually leads into tempestuous seas.",
+		reflection: "Have you ever tried to 'flee' from a spiritual prompt or responsibility? What happened?",
+		action: "Identify an assignment or task you've been delaying and start working on it today.",
+		prayer: "Ask God for willingness to go wherever He sends you without hesitation.",
+		media: "Old Testament Stories: 'Jonah and the Great Fish'"
+	  },
+	  "2026-12-01": {
+		focus: "Out of the Belly of Hell Cried I",
+		scripture: "Jonah 2:1–2 — \"Then Jonah prayed unto the LORD his God out of the fish's belly, And said, I cried by reason of mine affliction unto the LORD, and he heard me...\"",
+		insight: "No matter how deep the pit or mess we find ourselves in, a sincere prayer from the heart reaches God.",
+		reflection: "How does knowing God hears prayers from 'the belly of affliction' give you hope?",
+		action: "Read Jonah 2:1–9 and note how Jonah's prayer shifted toward gratitude.",
+		prayer: "Pour out a sincere prayer to God from whatever situation you are currently in.",
+		media: "Gospel Art: 'Jonah Praying in the Fish'"
+	  },
+	  "2026-12-02": {
+		focus: "God Repented of the Evil",
+		scripture: "Jonah 3:10 — \"And God saw their works, that they turned from their evil way; and God repented of the evil, that he had said that he would do unto them; and he did it not.\"",
+		insight: "The people of Nineveh repented from the greatest to the least, proving that anyone can change with God's help.",
+		reflection: "Why is it vital never to write anyone off as 'beyond redemption'?",
+		action: "Pray specifically for someone who seems far from God right now.",
+		prayer: "Thank God for His willingness to forgive entire communities when they repent.",
+		media: "Video Clip: 'Nineveh Repents'"
+	  },
+	  "2026-12-03": {
+		focus: "Doest Thou Well to Be Angry?",
+		scripture: "Jonah 4:4,11 — \"Then said the LORD, Doest thou well to be angry?... And should not I spare Nineveh, that great city, wherein are more than sixscore thousand persons...?\"",
+		insight: "Jonah struggled when God showed mercy to Nineveh. God's capacity for mercy is far wider than human resentment.",
+		reflection: "Do you ever struggle when mercy is extended to someone who hurt you or others?",
+		action: "Ponder God's love for all His children, including those who seem like enemies.",
+		prayer: "Ask God to enlarge your heart so you can rejoice in mercy shown to others.",
+		media: "Message Clip: 'The Mercy of Heavenly Father'"
+	  },
+	  "2026-12-04": {
+		focus: "Bethlehem Ephratah",
+		scripture: "Micah 5:2 — \"But thou, Beth-lehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel...\"",
+		insight: "Centuries before Christ's birth, Micah pinpointed the tiny village of Bethlehem as the birthplace of the Messiah.",
+		reflection: "How does fulfilled ancient prophecy strengthen your trust in God's future promises?",
+		action: "Read Micah 5:2 alongside Matthew 2:1–6 as Christmas approaches.",
+		prayer: "Thank God for the precise fulfillment of messianic prophecies.",
+		media: "Gospel Art: 'Bethlehem and the Birth of Jesus'"
+	  },
+	  "2026-12-05": {
+		focus: "What Doth the Lord Require of Thee?",
+		scripture: "Micah 6:8 — \"He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?\"",
+		insight: "God's core expectations are wonderfully clear: practice fairness, cherish mercy, and walk humbly with Him.",
+		reflection: "Which of these three—doing justly, loving mercy, or walking humbly—needs your focus today?",
+		action: "Perform a small act of mercy toward someone who made a mistake.",
+		prayer: "Ask Heavenly Father to help you walk in quiet humility before Him today.",
+		media: "Video: 'To Do Justly, Love Mercy, and Walk Humbly'"
+	  },
+	  "2026-12-06": {
+		focus: "He Delighteth in Mercy",
+		scripture: "Micah 7:18–19 — \"Who is a God like unto thee, that pardoneth iniquity... because he delighteth in mercy. He will turn again, he will have compassion upon us...\"",
+		insight: "God doesn't show mercy reluctantly; He *delighteth* in showing mercy to His children.",
+		reflection: "How does knowing God 'delights in mercy' make you feel about approaching Him in prayer?",
+		action: "Write down Micah 7:18–19 and read it whenever you feel unworthy or discouraged.",
+		prayer: "Express deep thanks to Heavenly Father for His delight in being merciful.",
+		media: "Audio/Hymn: 'Thy Mercy, My God'"
+	  },
+
+	  // --- WEEK 13: Dec 7–13 (Haggai; Zechariah; Malachi 1–2: "Consider Your Ways") ---
+	  "2026-12-07": {
+		focus: "Consider Your Ways",
+		scripture: "Haggai 1:5,7 — \"Now therefore thus saith the LORD of hosts; Consider your ways... Thus saith the LORD of hosts; Consider your ways.\"",
+		insight: "Haggai urged the people to pause and evaluate whether their daily priorities aligned with God's commandments.",
+		reflection: "If you 'consider your ways' today, are your highest priorities getting your best time?",
+		action: "Audit how you spent your time yesterday and adjust one low-value distraction.",
+		prayer: "Ask God to help you organize your life around eternal priorities.",
+		media: "Video Clip: 'Consider Your Ways' (General Conference)"
+	  },
+	  "2026-12-08": {
+		focus: "Ye Have Sown Much, and Bring in Little",
+		scripture: "Haggai 1:6 — \"Ye have sown much, and bring in little; ye eat, but ye have not enough... and he that earneth wages earneth wages to put it into a bag with holes.\"",
+		insight: "When we put material ambitions ahead of spiritual duties, life feels like putting money in a bag with holes.",
+		reflection: "Where are you spending effort on things that never truly satisfy?",
+		action: "Put spiritual duties (prayer, family study) ahead of chores or entertainment today.",
+		prayer: "Ask Heavenly Father to make your spiritual efforts fruitful.",
+		media: "Message Video: 'First Things First'"
+	  },
+	  "2026-12-09": {
+		focus: "The Glory of This Latter House",
+		scripture: "Haggai 2:9 — \"The glory of this latter house shall be greater than of the former, saith the LORD of hosts: and in this place will I give peace...\"",
+		insight: "God promised that the rebuilt temple would hold immense glory, pointing forward to the peace found in holy temples today.",
+		reflection: "How has worshipping in the temple brought peace into your personal life?",
+		action: "Schedule a temple appointment or prepare family names for temple ordinance work.",
+		prayer: "Thank God for the abundance of temples built across the world today.",
+		media: "Gospel Art: 'Glory of the Latter-day Temples'"
+	  },
+	  "2026-12-10": {
+		focus: "Not by Might, Nor by Power, But by My Spirit",
+		scripture: "Zechariah 4:6 — \"Then he answered and spake unto me, saying... Not by might, nor by power, but by my spirit, saith the LORD of hosts.\"",
+		insight: "Spiritual victories and lasting growth are accomplished through the quiet power of the Holy Ghost, not human force.",
+		reflection: "When have you seen a problem solved by the Spirit rather than human muscle or debate?",
+		action: "Approach a challenging task today relying on prayer and gentle persuasion.",
+		prayer: "Ask Heavenly Father to accomplish His work in your life through His Spirit.",
+		media: "Video: 'Not by Might, But by My Spirit'"
+	  },
+	  "2026-12-11": {
+		focus: "Rejoice Greatly, O Daughter of Zion",
+		scripture: "Zechariah 9:9 — \"Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass...\"",
+		insight: "Zechariah foretold Jesus riding into Jerusalem on Palm Sunday—a humble King bringing salvation.",
+		reflection: "How can you welcome Jesus Christ into your heart as your King this Christmas season?",
+		action: "Read Zechariah 9:9 alongside Matthew 21:1–11 with your family.",
+		prayer: "Shout joyful thanks in your heart for Jesus Christ as your rightful King.",
+		media: "Gospel Art: 'Triumphal Entry into Jerusalem'"
+	  },
+	  "2026-12-12": {
+		focus: "They Shall Be as the Stones of a Crown",
+		scripture: "Zechariah 9:16 — \"And the LORD their God shall save them in that day as the flock of his people: for they shall be as the stones of a crown, lifted up as an ensign upon his land.\"",
+		insight: "To God, His covenant children are precious, polished gems in a royal crown.",
+		reflection: "How does seeing yourself as a 'jewel in God's crown' change how you handle trials?",
+		action: "Express love to a family member, reminding them how precious they are to God.",
+		prayer: "Thank Heavenly Father for valuing you as a precious jewel.",
+		media: "Video Clip: 'Precious in His Sight'"
+	  },
+	  "2026-12-13": {
+		focus: "Turn You to the Strong Hold, Ye Prisoners of Hope",
+		scripture: "Zechariah 9:12 — \"Turn you to the strong hold, ye prisoners of hope: even to day do I declare that I will render double unto thee;\"",
+		insight: "Even when circumstances feel restrictive, being a 'prisoner of hope' in Christ brings divine protection.",
+		reflection: "What gives you unshakeable spiritual hope during hard seasons?",
+		action: "Share a message of Christmas hope with someone who is currently struggling.",
+		prayer: "Pray for those who feel hopeless, asking God to fill them with light.",
+		media: "Video: 'Prisoners of Hope'"
+	  },
+
+	  // --- WEEK 14: Dec 14–20 (Christmas Focus: "Unto Us a Child Is Born") ---
+	  "2026-12-14": {
+		focus: "The Virgin Shall Conceive",
+		scripture: "Isaiah 7:14 — \"Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.\"",
+		insight: "Isaiah's ancient Christmas prophecy reminds us that God prepared the way for the Savior's miraculous birth centuries in advance.",
+		reflection: "How can you focus your mind on Jesus Christ as the true Christmas season begins?",
+		action: "Set up a nativity scene in your home and read Isaiah 7:14 together.",
+		prayer: "Thank Heavenly Father for sending His Only Begotten Son to earth.",
+		media: "Church Film: 'The Christ Child (Intro Clip)'"
+	  },
+	  "2026-12-15": {
+		focus: "Unto Us a Child Is Born",
+		scripture: "Isaiah 9:6 — \"For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God...\"",
+		insight: "The gift of the Savior is the greatest gift ever given to mankind. He carries the government of our salvation.",
+		reflection: "Which gift of the Savior—peace, wisdom, forgiveness—are you most grateful for today?",
+		action: "Listen to the Christmas portion of Handel's 'Messiah' or favorite Christmas hymns.",
+		prayer: "Express deep gratitude for the gift of Jesus Christ born in Bethlehem.",
+		media: "Music Video: 'Unto Us a Child Is Born' (Tabernacle Choir)"
+	  },
+	  "2026-12-16": {
+		focus: "Out of Bethlehem Shall He Come",
+		scripture: "Micah 5:2 — \"But thou, Beth-lehem Ephratah... out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.\"",
+		insight: "The Eternal Son of God humbled Himself to be born in a quiet, obscure village, demonstrating divine humility.",
+		reflection: "How can you practice simple, quiet humility in your Christmas giving?",
+		action: "Do a secret act of service for a neighbor or coworker today.",
+		prayer: "Pray for a humble spirit like the Savior demonstrated in His birth.",
+		media: "Gospel Art: 'Journey to Bethlehem'"
+	  },
+	  "2026-12-17": {
+		focus: "A Light to the People That Walked in Darkness",
+		scripture: "Isaiah 9:2 — \"The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.\"",
+		insight: "Christ's coming into the world is like a brilliant sunrise dispelling spiritual darkness and fear.",
+		reflection: "How has the light of the gospel dispelled darkness or confusion in your life?",
+		action: "Light a candle or turn on Christmas lights and ponder Christ as the Light of the World.",
+		prayer: "Ask God to help you shine Christ's light into dark places today.",
+		media: "Video: 'Light the World This Christmas'"
+	  },
+	  "2026-12-18": {
+		focus: "Glory to God in the Highest",
+		scripture: "Luke 2:13–14 — \"And suddenly there was with the angel a multitude of the heavenly host praising God, and saying, Glory to God in the highest, and on earth peace, good will toward men.\"",
+		insight: "Heavenly hosts rejoiced at the birth of the Savior because His arrival brought peace and goodwill to earth.",
+		reflection: "How can you spread 'goodwill toward men' in your interactions today?",
+		action: "Write a warm note of appreciation to someone who serves your community.",
+		prayer: "Pray for peace and goodwill to spread throughout your city and nation.",
+		media: "Church Film: 'The Christ Child: Nativity Story'"
+	  },
+	  "2026-12-19": {
+		focus: "Good Tidings of Great Joy",
+		scripture: "Luke 2:10–11 — \"And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people. For unto you is born this day in the city of David a Saviour...\"",
+		insight: "The Christmas message is one of 'great joy' meant for 'all people'—no one is excluded from Christ's love.",
+		reflection: "How can you share the joy of the Savior's birth with someone who feels lonely?",
+		action: "Invite a friend or neighbor to a Christmas service or gathering.",
+		prayer: "Ask God to fill your home with the pure joy of the Savior's birth.",
+		media: "Audio/Hymn: 'Joy to the World'"
+	  },
+	  "2026-12-20": {
+		focus: "Pondering in Our Hearts",
+		scripture: "Luke 2:19 — \"But Mary kept all these things, and pondered them in her heart.\"",
+		insight: "Amidst the business of the season, Mary paused to ponder sacred spiritual events in her heart.",
+		reflection: "How can you create quiet moments to ponder the Savior amidst Christmas preparations?",
+		action: "Spend 15 minutes in quiet reflection near the nativity scene without phone or TV.",
+		prayer: "Offer a prayer of quiet worship and reverence to Heavenly Father.",
+		media: "Gospel Art: 'Mary Pondering in Her Heart'"
+	  },
+
+	  // --- WEEK 15: Dec 21–27 (Malachi 3–4: "Turn the Heart of the Fathers to the Children") ---
+	  "2026-12-21": {
+		focus: "The Messenger of the Covenant",
+		scripture: "Malachi 3:1 — \"Behold, I will send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple...\"",
+		insight: "Malachi foresaw both John the Baptist preparing Christ's first coming and the Lord's eventual return to His temples.",
+		reflection: "How does temple worship prepare you for the Second Coming of Jesus Christ?",
+		action: "Read Malachi 3:1–4 and reflect on how temples prepare the earth for the Savior.",
+		prayer: "Thank God for restored temple keys and ordinances on the earth today.",
+		media: "Gospel Art: 'Malachi Prophesying of the Latter Days'"
+	  },
+	  "2026-12-22": {
+		focus: "A Refiner's Fire and Fuller's Soap",
+		scripture: "Malachi 3:2–3 — \"...for he is like a refiner's fire, and like fullers' soap: And he shall sit as a refiner and purifier of silver...\"",
+		insight: "A silversmith sits over the silver until he sees his own image reflected in it. God uses trials to purify us until we reflect Christ.",
+		reflection: "How are your current trials refining your character to look more like the Savior?",
+		action: "Write down one lesson you have learned from a hard experience this past year.",
+		prayer: "Ask Heavenly Father to let trials refine you rather than make you bitter.",
+		media: "Video Clip: 'The Refiner's Fire'"
+	  },
+	  "2026-12-23": {
+		focus: "Bring Ye All the Tithes into the Storehouse",
+		scripture: "Malachi 3:10 — \"Bring ye all the tithes into the storehouse... and prove me now herewith... if I will not open you the windows of heaven, and pour you out a blessing...\"",
+		insight: "Tithing is a covenant law accompanied by a divine challenge: 'Prove me now.' God promises abundant spiritual blessings.",
+		reflection: "How have you experienced the 'windows of heaven' opening through paying tithing?",
+		action: "Complete your annual tithing settlement or review your tithing commitments.",
+		prayer: "Thank God for His temporal and spiritual blessings over the past year.",
+		media: "Video: 'Windows of Heaven (Tithing Blessings)'"
+	  },
+	  "2026-12-24": {
+		focus: "They Shall Be Mine in That Day",
+		scripture: "Malachi 3:17 — \"And they shall be mine, saith the LORD of hosts, in that day when I make up my jewels; and I will spare them, as a man spareth his own son...\"",
+		insight: "On Christmas Eve, remember that God considers faithful covenant keepers as His most prized treasures ('jewels').",
+		reflection: "How does knowing God treasures you as His jewel comfort your heart tonight?",
+		action: "Gather your family to read Luke 2 and share why Jesus is your greatest gift.",
+		prayer: "Offer a heartfelt prayer of love and reverence on this sacred Christmas Eve.",
+		media: "Church Christmas Special: 'The Christ Child'"
+	  },
+	  "2026-12-25": {
+		focus: "Merry Christmas — The Sun of Righteousness Risen",
+		scripture: "Malachi 4:2 — \"But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.\"",
+		insight: "Christmas Day! Jesus Christ is the Sun of Righteousness who brings spiritual warmth and healing to the world.",
+		reflection: "How has the Savior's birth brought light and healing into your home today?",
+		action: "Express love and gratitude to every member of your household today.",
+		prayer: "Pour out a prayer of deep joy and gratitude for the birth of Jesus Christ.",
+		media: "Hymn Video: 'Hark! The Herald Angels Sing'"
+	  },
+	  "2026-12-26": {
+		focus: "Behold, I Will Send You Elijah the Prophet",
+		scripture: "Malachi 4:5 — \"Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the LORD:\"",
+		insight: "Malachi's final prophecy promised that Elijah would return to restore sealing keys before the Second Coming.",
+		reflection: "Why is the restoration of Elijah's sealing power essential for eternal families?",
+		action: "Read Malachi 4:5–6 alongside Doctrine and Covenants 110:13–16.",
+		prayer: "Thank God for the return of Elijah and the sealing power in holy temples.",
+		media: "Video: 'Elijah Restores Sealing Keys in Kirtland Temple'"
+	  },
+	  "2026-12-27": {
+		focus: "Turning Hearts to the Fathers and Children",
+		scripture: "Malachi 4:6 — \"And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.\"",
+		insight: "The Spirit of Elijah turns our hearts to our ancestors through family history and temple sealing ordinances.",
+		reflection: "How has doing family history turned your heart toward your deceased relatives?",
+		action: "Upload a family photo or record a memory on the FamilySearch Memories app.",
+		prayer: "Pray for family unity on both sides of the veil.",
+		media: "Video: 'Hearts of the Children (Family History Work)'"
+	  },
+
+	  // --- WEEK 16: Dec 28–31 (Year-End Review: "Choose You This Day Whom Ye Will Serve") ---
+	  "2026-12-28": {
+		focus: "Looking Back with Gratitude",
+		scripture: "1 Samuel 7:12 — \"...Then Samuel took a stone... and called the name of it Eben-ezer, saying, Hitherto hath the LORD helped us.\"",
+		insight: "As the year comes to an end, like Samuel we erect an 'Ebenezer'—a landmark remembering how the Lord helped us.",
+		reflection: "What are three major ways the Lord has helped and sustained you throughout 2026?",
+		action: "Write down 10 specific blessings you received during this past year.",
+		prayer: "Offer a prayer consisting entirely of gratitude for God's help this year.",
+		media: "Audio/Hymn: 'Count Your Blessings'"
+	  },
+	  "2026-12-29": {
+		focus: "Not One Word Hath Failed",
+		scripture: "Joshua 23:14 — \"...and ye know in all your hearts... that not one thing hath failed of all the good things which the LORD your God spake concerning you; all are come to pass...\"",
+		insight: "God's promises are 100% reliable. Looking back over scripture and history, not one word of His promises fails.",
+		reflection: "Which gospel promise gave you the most strength during this past year?",
+		action: "Review your patriarchal blessing and note promises that have guided you.",
+		prayer: "Express total trust in God's promises for your future.",
+		media: "Video: 'Not One Word Hath Failed'"
+	  },
+	  "2026-12-30": {
+		focus: "As for Me and My House",
+		scripture: "Joshua 24:15 — \"...choose you this day whom ye will serve... but as for me and my house, we will serve the LORD.\"",
+		insight: "Deciding to serve the Lord is a commitment we renew every day, setting the spiritual foundation for our homes.",
+		reflection: "How can you strengthen your home's commitment to serve the Lord in the coming new year?",
+		action: "Hold a short family council to talk about spiritual goals for the new year.",
+		prayer: "Rededicate your home and family to serving Heavenly Father.",
+		media: "Gospel Art: 'As for Me and My House We Will Serve the Lord'"
+	  },
+	  "2026-12-31": {
+		focus: "Press Forward with a Steadfastness in Christ",
+		scripture: "2 Nephi 31:20 / Psalm 100:5 — \"...ye must press forward with a steadfastness in Christ... For the LORD is good; his mercy is everlasting; and his truth endureth to all generations.\"",
+		insight: "As 2026 closes, we step into the future with steadfast faith in Christ, knowing His mercy and truth endure forever.",
+		reflection: "What is your primary spiritual goal as you enter the new year?",
+		action: "Write a spiritual commitment letter to yourself for the upcoming year.",
+		prayer: "Thank Heavenly Father for leading you through 2026 and ask for His Spirit in the new year.",
+		media: "Video Clip: 'Pressing Forward with Steadfast Faith'"
+	  }
+	};
+
+    // State & Storage Variables
+    let currentDateStr = "2026-09-14";
+    let progressData = JSON.parse(localStorage.getItem('cfm_progress_2026')) || {};
+
+    window.onload = () => {
+      populateWeekSelect();
+      const today = new Date().toISOString().split('T')[0];
+      if (today >= "2026-09-14" && today <= "2026-12-31") {
+        currentDateStr = today;
+      }
+      document.getElementById('date-picker').value = currentDateStr;
+      loadDayData(currentDateStr);
+      updateStreak();
+    };
+
+    function populateWeekSelect() {
+      const select = document.getElementById('week-select');
+      select.innerHTML = '';
+      weeksMeta.forEach(w => {
+        const opt = document.createElement('option');
+        opt.value = w.start;
+        opt.textContent = w.title;
+        select.appendChild(opt);
+      });
+    }
+
+    function getWeekMetaForDate(dateStr) {
+      return weeksMeta.find(w => dateStr >= w.start && dateStr <= w.end) || weeksMeta[0];
+    }
+
+    function getDayData(dateStr) {
+      if (scriptureDatabase[dateStr]) {
+        return { week: getWeekMetaForDate(dateStr), day: scriptureDatabase[dateStr] };
+      }
+
+      // Dynamic generator for all remaining dates through Dec 31
+      const meta = getWeekMetaForDate(dateStr);
+      return {
+        week: meta,
+        day: {
+          focus: meta.theme,
+          scripture: `${meta.keyScripture} (KJV) — "Trust in the LORD with all thine heart; and lean not unto thine own understanding."`,
+          insight: `In this week's CFM lesson (${meta.title}), the prophet reminds us that God leads His children through covenants and daily devotion.`,
+          reflection: "How can you apply this week's spiritual principle in your daily decisions?",
+          action: "Read the assigned Old Testament chapter for today and mark verses that inspire you.",
+          prayer: "Ask Heavenly Father to strengthen your faith and help you follow Jesus Christ today.",
+          media: meta.media
+        }
+      };
+    }
+
+    function loadDayData(dateStr) {
+      currentDateStr = dateStr;
+      document.getElementById('date-picker').value = dateStr;
+
+      const { week, day } = getDayData(dateStr);
+
+      document.getElementById('week-name').textContent = week.title;
+      document.getElementById('day-date').textContent = formatDateDisplay(dateStr);
+      document.getElementById('focus-text').innerHTML = `<b>Focus:</b> ${day.focus}`;
+      document.getElementById('scripture-text').textContent = day.scripture;
+      document.getElementById('insight-text').textContent = day.insight;
+      document.getElementById('reflection-text').textContent = day.reflection;
+      document.getElementById('action-text').textContent = day.action;
+      document.getElementById('prayer-text').textContent = day.prayer;
+      document.getElementById('media-text').innerHTML = `🎬 <b>Church Media Recommendation:</b> ${day.media}`;
+
+      // Sync Checkboxes
+      const dayProgress = progressData[dateStr] || {};
+      ['read', 'reflect', 'act', 'pray'].forEach(step => {
+        const cb = document.getElementById(`check-${step}`);
+        const box = document.getElementById(`item-${step}-box`);
+        const isChecked = !!dayProgress[step];
+        cb.checked = isChecked;
+        if (isChecked) box.classList.add('completed');
+        else box.classList.remove('completed');
+      });
+    }
+
+    function toggleStep(step) {
+      if (!progressData[currentDateStr]) progressData[currentDateStr] = {};
+      const cb = document.getElementById(`check-${step}`);
+      progressData[currentDateStr][step] = cb.checked;
+
+      const box = document.getElementById(`item-${step}-box`);
+      if (cb.checked) box.classList.add('completed');
+      else box.classList.remove('completed');
+
+      localStorage.setItem('cfm_progress_2026', JSON.stringify(progressData));
+      updateStreak();
+    }
+
+    function updateStreak() {
+      let streak = 0;
+      let checkDate = new Date(currentDateStr);
+
+      while (true) {
+        const dateKey = checkDate.toISOString().split('T')[0];
+        const dayProg = progressData[dateKey];
+        if (dayProg && (dayProg.read || dayProg.reflect || dayProg.act || dayProg.pray)) {
+          streak++;
+          checkDate.setDate(checkDate.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+      document.getElementById('streak-count').textContent = streak;
+    }
+
+    function navigateDay(offset) {
+      const d = new Date(currentDateStr);
+      d.setDate(d.getDate() + offset);
+      const newStr = d.toISOString().split('T')[0];
+      if (newStr >= "2026-09-14" && newStr <= "2026-12-31") {
+        loadDayData(newStr);
+      }
+    }
+
+    function onDateChange() {
+      const val = document.getElementById('date-picker').value;
+      if (val) loadDayData(val);
+    }
+
+    function onWeekChange() {
+      const val = document.getElementById('week-select').value;
+      if (val) loadDayData(val);
+    }
+
+    function formatDateDisplay(dateStr) {
+      const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', options);
+    }
+  </script>
+</body>
+</html>
