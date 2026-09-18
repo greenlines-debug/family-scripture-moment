@@ -151,7 +151,7 @@
       flex: 1;
     }
 
-    .christ-avatar {
+    .christ-avatar-round {
       width: 62px;
       height: 62px;
       border-radius: 50%;
@@ -159,6 +159,15 @@
       border: 2px solid var(--accent);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
       flex-shrink: 0;
+    }
+    
+    .christ-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px; /* <-- Change from 50% to 8px (or 0 for crisp square corners) */
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .week-label {
