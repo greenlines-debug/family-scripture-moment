@@ -86,6 +86,24 @@
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
+  header {
+    background: linear-gradient(135deg, rgba(26, 82, 118, 0.88), rgba(18, 56, 81, 0.92)),
+                url('https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: white;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Spreads title to left, image to right */
+    align-items: center; /* Vertically aligns title text and image */
+    gap: 16px;
+    }
+    
+    .header-title {
+    flex: 1; /* Takes up all available space on the left */
+    }
+
     .streak-badge {
       background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(8px);
@@ -161,7 +179,7 @@
       flex-shrink: 0;
     }
     
-    .christ-avatar {
+    .christ-avatar-dynamic-position {
       width: 94px;
       height: 94px;
       border-radius: 8px; /* <-- Change from 50% to 8px (or 0 for crisp square corners) */
@@ -169,6 +187,17 @@
       border: 2px solid var(--accent);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
+    
+    .christ-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px; /* Square with smooth rounded corners */
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0; /* Prevents the image from shrinking on mobile */
+      margin-left: auto; /* Guarantees alignment to the far right */
+      }
 
     .week-label {
       font-size: 0.8rem;
