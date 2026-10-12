@@ -69,6 +69,10 @@
       background: linear-gradient(90deg, #d4ac0d, #f1c40f, #d4ac0d);
     }
 
+    .header-title {
+      flex: 1;
+    }
+
     .header-title h1 {
       font-size: 1.65rem;
       font-weight: 800;
@@ -87,37 +91,15 @@
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
-  header {
-    background: linear-gradient(135deg, rgba(26, 82, 118, 0.88), rgba(18, 56, 81, 0.92)),
-                url('https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1200&q=80') center/cover;
-    color: white;
-    padding: 24px;
-    border-radius: var(--border-radius);
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    display: flex; /* Enables flexbox layout */
-    justify-content: space-between; /* Spreads title to left, image to right */
-    align-items: center; /* Vertically aligns title text and image */
-    gap: 16px;
-    }
-    
-    .header-title {
-    flex: 1; /* Takes up all available space on the left */
-    }
-
-    .streak-badge {
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 10px 18px;
-      border-radius: 24px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    .christ-avatar {
+      width: 94px;
+      height: 94px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+      margin-left: auto;
     }
 
     .controls {
@@ -169,36 +151,6 @@
     .date-header-left {
       flex: 1;
     }
-
-    .christ-avatar-round {
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-      flex-shrink: 0;
-    }
-    
-    .christ-avatar-dynamic-position {
-      width: 94px;
-      height: 94px;
-      border-radius: 8px; /* <-- Change from 50% to 8px (or 0 for crisp square corners) */
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .christ-avatar {
-      width: 94px;
-      height: 94px;
-      border-radius: 8px; /* Square with smooth rounded corners */
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      flex-shrink: 0; /* Prevents the image from shrinking on mobile */
-      margin-left: auto; /* Guarantees alignment to the far right */
-      }
 
     .week-label {
       font-size: 0.8rem;
@@ -266,48 +218,6 @@
       color: var(--primary-dark);
     }
 
-    .checklist {
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #fff;
-      padding: 14px 18px;
-      border: 1.5px solid #e1e8ed;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-
-    .check-item:hover {
-      border-color: var(--primary);
-      transform: translateY(-1px);
-    }
-
-    .check-item input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      accent-color: var(--success);
-      cursor: pointer;
-    }
-
-    .check-item.completed {
-      background: #f0fff4;
-      border-color: #c6f6d5;
-      color: var(--text-muted);
-    }
-
-    .check-item.completed span {
-      text-decoration: line-through;
-    }
-
     .nav-buttons {
       display: flex;
       justify-content: space-between;
@@ -353,13 +263,11 @@
       <h1>Scripture Moment</h1>
       <p>Come, Follow Me 2026 — Old Testament</p>
     </div>
-    <!--<div class="streak-badge">
-      🔥 <span id="streak-count">0</span> Day Streak
-    </div>--> 
     <img 
       src="savior.jpg"
       class="christ-avatar"
       title="Jesus Christ — Light of the World"
+      alt="Jesus Christ"
     />
   </header>
 
@@ -367,28 +275,16 @@
     <select id="week-select" onchange="onWeekChange()">
       <!-- Populated dynamically via JS -->
     </select>
-    <input type="date" id="date-picker" min="2026-09-14" max="2026-12-31" onchange="onDateChange()" />
+    <input type="date" id="date-picker" min="2026-01-01" max="2026-12-31" onchange="onDateChange()" />
   </div>
 
   <main id="app-content">
     <div class="card">
-      <!-- Date header with Savior image on right -->
       <div class="date-header">
         <div class="date-header-left">
           <div class="week-label" id="week-name">Week Loading...</div>
           <h2 class="day-title" id="day-date">Select a Date</h2>
         </div>
-        <!--<img 
-          src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=200&q=80" 
-          alt="Jesus Christ Light" 
-          class="christ-avatar"
-          title="Jesus Christ — Light of the World"
-        />-->
-        <!--<img 
-          src="savior.jpg"
-          class="christ-avatar"
-          title="Jesus Christ — Light of the World"
-        />-->
       </div>
 
       <!-- 📖 Scripture & Focus -->
@@ -427,30 +323,10 @@
         🎬 <b>Church Media Recommendation:</b> -
       </div>
 
-      <!-- Daily Tracker Checklist -->
-      <!--<div class="checklist">
-        <label class="check-item" id="item-read-box">
-          <input type="checkbox" id="check-read" onchange="toggleStep('read')" />
-          <span>Read Scripture & Insight</span>
-        </label>
-        <label class="check-item" id="item-reflect-box">
-          <input type="checkbox" id="check-reflect" onchange="toggleStep('reflect')" />
-          <span>Ponder Reflection Question</span>
-        </label>
-        <label class="check-item" id="item-act-box">
-          <input type="checkbox" id="check-act" onchange="toggleStep('act')" />
-          <span>Complete Action Challenge</span>
-        </label>
-        <label class="check-item" id="item-pray-box">
-          <input type="checkbox" id="check-pray" onchange="toggleStep('pray')" />
-          <span>Offer Personal / Family Prayer</span>
-        </label>
+      <div class="nav-buttons">
+        <button class="btn" id="prev-btn" onclick="navigateDay(-1)">← Previous Day</button>
+        <button class="btn" id="next-btn" onclick="navigateDay(1)">Next Day →</button>
       </div>
-    </div>-->
-
-    <div class="nav-buttons">
-      <button class="btn" id="prev-btn" onclick="navigateDay(-1)">← Previous Day</button>
-      <button class="btn" id="next-btn" onclick="navigateDay(1)">Next Day →</button>
     </div>
   </main>
 
@@ -460,26 +336,197 @@
 
   <script>
     const weeksMeta = [
-      { id: 1, title: "Sep 14–20: Isaiah 1–12", start: "2026-09-14", end: "2026-09-20", keyScripture: "Isaiah 1:18", theme: "Cleansing & Salvation", mediaTitle: "Old Testament Stories: Isaiah the Prophet", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-36-isaiah-the-prophet?lang=eng" },
-      { id: 2, title: "Sep 21–27: Isaiah 13–14; 24–30; 35", start: "2026-09-21", end: "2026-09-27", keyScripture: "Isaiah 25:8", theme: "Refuge from the Storm", mediaTitle: "Hymns: Peace in Christ", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/2020-07-peace-in-christ?lang=eng" },
-      { id: 3, title: "Sep 28–Oct 4: Isaiah 40–49", start: "2026-09-28", end: "2026-10-04", keyScripture: "Isaiah 41:10", theme: "Fear Not, I Am With Thee", mediaTitle: "Hymn: How Firm a Foundation", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/how-firm-a-foundation?lang=eng" },
-      { id: 4, title: "Oct 5–11: Isaiah 50–57", start: "2026-10-05", end: "2026-10-11", keyScripture: "Isaiah 53:5", theme: "He Hath Borne Our Griefs", mediaTitle: "The Messiah: Isaiah 53 Prophecies", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-seminary-teacher-manual-2025/511-the-living-christ-part-1?lang=eng" },
-      { id: 5, title: "Oct 12–18: Isaiah 58–66", start: "2026-10-12", end: "2026-10-18", keyScripture: "Isaiah 58:13-14", theme: "Sabbath Delight & Fasting", mediaTitle: "General Conference: Is Not This the Fast That I Have Chosen?", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2015/04/is-not-this-the-fast-that-i-have-chosen?lang=eng" },
-      { id: 6, title: "Oct 19–25: Jeremiah 1–20", start: "2026-10-19", end: "2026-10-25", keyScripture: "Jeremiah 1:5", theme: "Known Before Birth & Called", mediaTitle: "Old Testament Stories: Jeremiah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-41-jeremiah?lang=eng" },
-      { id: 7, title: "Oct 26–Nov 1: Jeremiah 30–36; Ezekiel 1–34", start: "2026-10-26", end: "2026-11-01", keyScripture: "Jeremiah 31:33", theme: "Covenants Written on Hearts", mediaTitle: "General Conference: Covenants and Commitments", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2012/10/covenants?lang=eng" },
-      { id: 8, title: "Nov 2–8: Ezekiel 37; 47", start: "2026-11-02", end: "2026-11-08", keyScripture: "Ezekiel 37:19", theme: "Two Sticks Made One & Healing Waters", mediaTitle: "Old Testament Stories: Ezekiel", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-37-ezekiel?lang=eng" },
-      { id: 9, title: "Nov 9–15: Daniel 1–6", start: "2026-11-09", end: "2026-11-15", keyScripture: "Daniel 3:17-18", theme: "Courage in Trials ('But If Not')", mediaTitle: "Old Testament Stories: Daniel and the Lions' Den", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-42-daniel-and-the-lions-den?lang=eng" },
-      { id: 10, title: "Nov 16–22: Hosea 1–6; 11; Joel 2–3", start: "2026-11-16", end: "2026-11-22", keyScripture: "Joel 2:28", theme: "Outpouring of the Holy Spirit", mediaTitle: "General Conference: The Gift of the Holy Ghost", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2010/04/the-gift-of-the-holy-ghost?lang=eng" },
-      { id: 11, title: "Nov 23–29: Amos 3–5; Obadiah", start: "2026-11-23", end: "2026-11-29", keyScripture: "Amos 5:14", theme: "Seeking Goodness & Living Faith", mediaTitle: "General Conference: Seek the Lord Daily", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/04/seeking-the-lord?lang=eng" },
-      { id: 12, title: "Nov 30–Dec 6: Jonah; Micah", start: "2026-11-30", end: "2026-12-06", keyScripture: "Micah 6:8", theme: "Loving Mercy & Walking Humbly", mediaTitle: "Old Testament Stories: Jonah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-40-jonah?lang=eng" },
-      { id: 13, title: "Dec 7–13: Haggai; Zechariah; Malachi 1-2", start: "2026-12-07", end: "2026-12-13", keyScripture: "Haggai 1:7", theme: "Rebuilding the Temple & Priorities", mediaTitle: "General Conference: Consider Your Ways", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/10/deep-and-lasting-conversion-to-heavenly-father-and-the-lord-jesus-christ?lang=eng" },
-      { id: 14, title: "Dec 14–20: Christmas Season Focus", start: "2026-12-14", end: "2026-12-20", keyScripture: "Isaiah 9:6", theme: "Unto Us a Child Is Born", mediaTitle: "Church Film: The Christ Child", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/the-christ-child/the-christ-child?lang=eng" },
-      { id: 15, title: "Dec 21–27: Malachi 3–4", start: "2026-12-21", end: "2026-12-27", keyScripture: "Malachi 4:5-6", theme: "Turning Hearts to the Fathers", mediaTitle: "General Conference: The Spirit of Elijah", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2011/10/the-hearts-of-the-children-shall-turn?lang=eng" },
-      { id: 16, title: "Dec 28–31: Year-End Covenant Review", start: "2026-12-28", end: "2026-12-31", keyScripture: "Joshua 24:15", theme: "Choosing to Serve the Lord", mediaTitle: "Special Witnesses of Christ Series", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/special-witnesses-of-christ/special-witnesses-of-christ?lang=eng" }
+      { id: 1, title: "Dec 29–Jan 4: Introduction to the Old Testament", start: "2026-01-01", end: "2026-01-04", keyScripture: "Joshua 1:8", theme: "This Book of the Law", mediaTitle: "Old Testament Overview", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026?lang=eng" },
+      { id: 2, title: "Jan 5–11: Moses 1; Abraham 3", start: "2026-01-05", end: "2026-01-11", keyScripture: "Moses 1:39", theme: "Work and Glory of God", mediaTitle: "Old Testament Stories: Chapter 1", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-1?lang=eng" },
+      { id: 3, title: "Jan 12–18: Genesis 1–2; Moses 2–3; Abraham 4–5", start: "2026-01-12", end: "2026-01-18", keyScripture: "Genesis 1:27", theme: "Created in God's Image", mediaTitle: "Video: Creation", mediaUrl: "https://www.churchofjesuschrist.org/media/video/2012-06-0001-the-creation?lang=eng" },
+      { id: 4, title: "Jan 19–25: Genesis 3–4; Moses 4–5", start: "2026-01-19", end: "2026-01-25", keyScripture: "Moses 5:12", theme: "The Fall & Atonement", mediaTitle: "Old Testament Stories: Adam and Eve", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-3?lang=eng" },
+      { id: 5, title: "Jan 26–Feb 1: Genesis 5; Moses 6", start: "2026-01-26", end: "2026-02-01", keyScripture: "Moses 6:34", theme: "Walk with Me", mediaTitle: "Video: Enoch and Zion", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 6, title: "Feb 2–8: Moses 7", start: "2026-02-02", end: "2026-02-08", keyScripture: "Moses 7:18", theme: "One Heart and One Mind", mediaTitle: "General Conference: Zion in Our Midst", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng" },
+      { id: 7, title: "Feb 9–15: Genesis 6–11; Moses 8", start: "2026-02-09", end: "2026-02-15", keyScripture: "Genesis 6:9", theme: "Noah Walked with God", mediaTitle: "Old Testament Stories: Noah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-6?lang=eng" },
+      { id: 8, title: "Feb 16–22: Genesis 12–17; Abraham 1–2", start: "2026-02-16", end: "2026-02-22", keyScripture: "Abraham 2:11", theme: "The Abrahamic Covenant", mediaTitle: "Gospel Art: Abraham's Covenant", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book?lang=eng" },
+      { id: 9, title: "Feb 23–Mar 1: Genesis 18–23", start: "2026-02-23", end: "2026-03-01", keyScripture: "Genesis 22:14", theme: "In the Mount of the Lord", mediaTitle: "Old Testament Stories: Abraham and Isaac", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 10, title: "Mar 2–8: Genesis 24–33", start: "2026-03-02", end: "2026-03-08", keyScripture: "Genesis 28:15", theme: "I Am with Thee", mediaTitle: "Old Testament Stories: Jacob and Esau", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 11, title: "Mar 9–15: Genesis 37–41", start: "2026-03-09", end: "2026-03-15", keyScripture: "Genesis 39:2", theme: "The Lord Was with Joseph", mediaTitle: "Old Testament Stories: Joseph in Egypt", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 12, title: "Mar 16–22: Genesis 42–50", start: "2026-03-16", end: "2026-03-22", keyScripture: "Genesis 50:20", theme: "God Meant It unto Good", mediaTitle: "General Conference: Forgiveness & Healing", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng" },
+      { id: 13, title: "Mar 23–29: Exodus 1–6", start: "2026-03-23", end: "2026-03-29", keyScripture: "Exodus 3:14", theme: "I AM Hath Sent Me", mediaTitle: "Old Testament Stories: Moses", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 14, title: "Mar 30–Apr 5: Easter Season", start: "2026-03-30", end: "2026-04-05", keyScripture: "Isaiah 53:5", theme: "He Is Risen", mediaTitle: "Special Witnesses of Christ", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/special-witnesses-of-christ?lang=eng" },
+      { id: 15, title: "Apr 6–12: Exodus 7–13", start: "2026-04-06", end: "2026-04-12", keyScripture: "Exodus 12:13", theme: "The Passover Lamb", mediaTitle: "Old Testament Stories: The Passover", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 16, title: "Apr 13–19: Exodus 14–18", start: "2026-04-13", end: "2026-04-19", keyScripture: "Exodus 14:13", theme: "Stand Still & See Salvation", mediaTitle: "Old Testament Stories: Crossing the Red Sea", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 17, title: "Apr 20–26: Exodus 19–20; 24; 31–34", start: "2026-04-20", end: "2026-04-26", keyScripture: "Exodus 20:3", theme: "The Ten Commandments", mediaTitle: "Video: The Ten Commandments", mediaUrl: "https://www.churchofjesuschrist.org/media?lang=eng" },
+      { id: 18, title: "Apr 27–May 3: Exodus 35–40; Leviticus 1; 4; 16; 19", start: "2026-04-27", end: "2026-05-03", keyScripture: "Leviticus 19:2", theme: "Holiness unto the Lord", mediaTitle: "Gospel Art: Tabernacle in the Wilderness", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book?lang=eng" },
+      { id: 19, title: "May 4–10: Numbers 11–14; 20–24; 27", start: "2026-05-04", end: "2026-05-10", keyScripture: "Numbers 21:9", theme: "Look and Live", mediaTitle: "Old Testament Stories: The Brazen Serpent", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 20, title: "May 11–17: Deuteronomy 6–8; 15; 18; 29–30; 34", start: "2026-05-11", end: "2026-05-17", keyScripture: "Deuteronomy 6:5", theme: "Love the Lord Thy God", mediaTitle: "General Conference: The First Great Commandment", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng" },
+      { id: 21, title: "May 18–24: Joshua 1–8; 23–24", start: "2026-05-18", end: "2026-05-24", keyScripture: "Joshua 1:9", theme: "Be Strong and of Good Courage", mediaTitle: "Old Testament Stories: Joshua", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 22, title: "May 25–31: Judges 2–4; 6–8; 13–16", start: "2026-05-25", end: "2026-05-31", keyScripture: "Judges 6:12", theme: "The Lord Is with Thee", mediaTitle: "Old Testament Stories: Gideon & Samson", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 23, title: "Jun 1–7: Ruth; 1 Samuel 1–3", start: "2026-06-01", end: "2026-06-07", keyScripture: "Ruth 1:16", theme: "Thy People Shall Be My People", mediaTitle: "Old Testament Stories: Ruth and Hannah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 24, title: "Jun 8–14: 1 Samuel 8–10; 13; 15–16", start: "2026-06-08", end: "2026-06-14", keyScripture: "1 Samuel 16:7", theme: "The Lord Looketh on the Heart", mediaTitle: "Old Testament Stories: Samuel Anoints David", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 25, title: "Jun 15–21: 1 Samuel 17–18; 24–26; 2 Samuel 5–7", start: "2026-06-15", end: "2026-06-21", keyScripture: "1 Samuel 17:45", theme: "David and Goliath", mediaTitle: "Old Testament Stories: David and Goliath", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 26, title: "Jun 22–28: 2 Samuel 11–12; 1 Kings 3; 6–9; 11", start: "2026-06-22", end: "2026-06-28", keyScripture: "1 Kings 3:9", theme: "An Understanding Heart", mediaTitle: "Old Testament Stories: King Solomon", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 27, title: "Jun 29–Jul 5: 1 Kings 12–13; 17–22", start: "2026-06-29", end: "2026-07-05", keyScripture: "1 Kings 19:12", theme: "A Still Small Voice", mediaTitle: "Old Testament Stories: Elijah the Prophet", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 28, title: "Jul 6–12: 2 Kings 2–7", start: "2026-07-06", end: "2026-07-12", keyScripture: "2 Kings 6:16", theme: "They That Be with Us Are More", mediaTitle: "Old Testament Stories: Elisha", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 29, title: "Jul 13–19: 2 Kings 16–25", start: "2026-07-13", end: "2026-07-19", keyScripture: "2 Kings 18:5", theme: "Trust in the Lord God of Israel", mediaTitle: "Old Testament Stories: King Hezekiah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 30, title: "Jul 20–26: 2 Chronicles 14–20; 26; 30", start: "2026-07-20", end: "2026-07-26", keyScripture: "2 Chronicles 20:15", theme: "The Battle Is Not Yours, But God's", mediaTitle: "General Conference: Faith in God's Battles", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng" },
+      { id: 31, title: "Jul 27–Aug 2: Ezra 1; 3–7; Nehemiah 2; 4–6; Esther", start: "2026-07-27", end: "2026-08-02", keyScripture: "Esther 4:14", theme: "Come to the Kingdom for Such a Time as This", mediaTitle: "Old Testament Stories: Queen Esther", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 32, title: "Aug 3–9: Job 1–3; 12–14; 19; 21–24; 38–40; 42", start: "2026-08-03", end: "2026-08-09", keyScripture: "Job 19:25", theme: "I Know That My Redeemer Liveth", mediaTitle: "Hymn: I Know That My Redeemer Lives", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/i-know-that-my-redeemer-lives?lang=eng" },
+      { id: 33, title: "Aug 10–16: Psalms 1–2; 8; 19–24; 33–34", start: "2026-08-10", end: "2026-08-16", keyScripture: "Psalm 23:1", theme: "The Lord Is My Shepherd", mediaTitle: "Hymns: Psalm 23 Arrangements", mediaUrl: "https://www.churchofjesuschrist.org/media/music?lang=eng" },
+      { id: 34, title: "Aug 17–23: Psalms 49–51; 61–66; 69–72; 77–78; 85–86", start: "2026-08-17", end: "2026-08-23", keyScripture: "Psalm 51:10", theme: "Create in Me a Clean Heart", mediaTitle: "General Conference: Repentance and Joy", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng" },
+      { id: 35, title: "Aug 24–30: Psalms 102–3; 110; 116–19; 127–28; 135–39; 146–50", start: "2026-08-24", end: "2026-08-30", keyScripture: "Psalm 119:105", theme: "Thy Word Is a Lamp unto My Feet", mediaTitle: "General Conference: Scripture Study", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng" },
+      { id: 36, title: "Aug 31–Sep 6: Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12", start: "2026-08-31", end: "2026-09-06", keyScripture: "Proverbs 3:5-6", theme: "Trust in the Lord with All Thine Heart", mediaTitle: "Video: Trust in the Lord", mediaUrl: "https://www.churchofjesuschrist.org/media?lang=eng" },
+      { id: 37, title: "Sep 7–13: Introduction to Prophets & Isaiah", start: "2026-09-07", end: "2026-09-13", keyScripture: "Isaiah 1:18", theme: "Come Now, Let Us Reason Together", mediaTitle: "Old Testament Stories: Isaiah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng" },
+      { id: 38, title: "Sep 14–20: Isaiah 1–12", start: "2026-09-14", end: "2026-09-20", keyScripture: "Isaiah 1:18", theme: "Cleansing & Salvation", mediaTitle: "Old Testament Stories: Isaiah the Prophet", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-36-isaiah-the-prophet?lang=eng" },
+      { id: 39, title: "Sep 21–27: Isaiah 13–14; 24–30; 35", start: "2026-09-21", end: "2026-09-27", keyScripture: "Isaiah 25:8", theme: "Refuge from the Storm", mediaTitle: "Hymns: Peace in Christ", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/2020-07-peace-in-christ?lang=eng" },
+      { id: 40, title: "Sep 28–Oct 4: Isaiah 40–49", start: "2026-09-28", end: "2026-10-04", keyScripture: "Isaiah 41:10", theme: "Fear Not, I Am With Thee", mediaTitle: "Hymn: How Firm a Foundation", mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs/how-firm-a-foundation?lang=eng" },
+      { id: 41, title: "Oct 5–11: Isaiah 50–57", start: "2026-10-05", end: "2026-10-11", keyScripture: "Isaiah 53:5", theme: "He Hath Borne Our Griefs", mediaTitle: "The Messiah: Isaiah 53 Prophecies", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-seminary-teacher-manual-2025/511-the-living-christ-part-1?lang=eng" },
+      { id: 42, title: "Oct 12–18: Isaiah 58–66", start: "2026-10-12", end: "2026-10-18", keyScripture: "Isaiah 58:13-14", theme: "Sabbath Delight & Fasting", mediaTitle: "General Conference: Is Not This the Fast That I Have Chosen?", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2015/04/is-not-this-the-fast-that-i-have-chosen?lang=eng" },
+      { id: 43, title: "Oct 19–25: Jeremiah 1–20", start: "2026-10-19", end: "2026-10-25", keyScripture: "Jeremiah 1:5", theme: "Known Before Birth & Called", mediaTitle: "Old Testament Stories: Jeremiah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-41-jeremiah?lang=eng" },
+      { id: 44, title: "Oct 26–Nov 1: Jeremiah 30–36; Ezekiel 1–34", start: "2026-10-26", end: "2026-11-01", keyScripture: "Jeremiah 31:33", theme: "Covenants Written on Hearts", mediaTitle: "General Conference: Covenants and Commitments", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2012/10/covenants?lang=eng" },
+      { id: 45, title: "Nov 2–8: Ezekiel 37; 47", start: "2026-11-02", end: "2026-11-08", keyScripture: "Ezekiel 37:19", theme: "Two Sticks Made One & Healing Waters", mediaTitle: "Old Testament Stories: Ezekiel", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-37-ezekiel?lang=eng" },
+      { id: 46, title: "Nov 9–15: Daniel 1–6", start: "2026-11-09", end: "2026-11-15", keyScripture: "Daniel 3:17-18", theme: "Courage in Trials ('But If Not')", mediaTitle: "Old Testament Stories: Daniel and the Lions' Den", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-42-daniel-and-the-lions-den?lang=eng" },
+      { id: 47, title: "Nov 16–22: Hosea 1–6; 11; Joel 2–3", start: "2026-11-16", end: "2026-11-22", keyScripture: "Joel 2:28", theme: "Outpouring of the Holy Spirit", mediaTitle: "General Conference: The Gift of the Holy Ghost", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2010/04/the-gift-of-the-holy-ghost?lang=eng" },
+      { id: 48, title: "Nov 23–29: Amos 3–5; Obadiah", start: "2026-11-23", end: "2026-11-29", keyScripture: "Amos 5:14", theme: "Seeking Goodness & Living Faith", mediaTitle: "General Conference: Seek the Lord Daily", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/04/seeking-the-lord?lang=eng" },
+      { id: 49, title: "Nov 30–Dec 6: Jonah; Micah", start: "2026-11-30", end: "2026-12-06", keyScripture: "Micah 6:8", theme: "Loving Mercy & Walking Humbly", mediaTitle: "Old Testament Stories: Jonah", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-40-jonah?lang=eng" },
+      { id: 50, title: "Dec 7–13: Haggai; Zechariah; Malachi 1-2", start: "2026-12-07", end: "2026-12-13", keyScripture: "Haggai 1:7", theme: "Rebuilding the Temple & Priorities", mediaTitle: "General Conference: Consider Your Ways", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2018/10/deep-and-lasting-conversion-to-heavenly-father-and-the-lord-jesus-christ?lang=eng" },
+      { id: 51, title: "Dec 14–20: Christmas Season Focus", start: "2026-12-14", end: "2026-12-20", keyScripture: "Isaiah 9:6", theme: "Unto Us a Child Is Born", mediaTitle: "Church Film: The Christ Child", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/the-christ-child/the-christ-child?lang=eng" },
+      { id: 52, title: "Dec 21–27: Malachi 3–4", start: "2026-12-21", end: "2026-12-27", keyScripture: "Malachi 4:5-6", theme: "Turning Hearts to the Fathers", mediaTitle: "General Conference: The Spirit of Elijah", mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2011/10/the-hearts-of-the-children-shall-turn?lang=eng" },
+      { id: 53, title: "Dec 28–31: Year-End Covenant Review", start: "2026-12-28", end: "2026-12-31", keyScripture: "Joshua 24:15", theme: "Choosing to Serve the Lord", mediaTitle: "Special Witnesses of Christ Series", mediaUrl: "https://www.churchofjesuschrist.org/study/manual/special-witnesses-of-christ/special-witnesses-of-christ?lang=eng" }
     ];
 
     const scriptureDatabase = {
-      // --- WEEK 1: Sep 14–20 ---
+      // --- WEEK 1: Jan 1–4 (Introduction to the Old Testament) ---
+      "2026-01-01": {
+        focus: "The Value of the Old Testament",
+        scripture: "Joshua 1:8 — \"This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night... for then thou shalt make thy way prosperous, and then thou shalt have good success.\"",
+        insight: "The Old Testament is rich with testimonies of Jesus Christ and covenant relationships with God. Meditating on its truths anchors our faith in modern times.",
+        reflection: "How can studying the Old Testament this year deepen your relationship with Heavenly Father?",
+        action: "Set a specific time and quiet place for your daily scripture study throughout 2026.",
+        prayer: "Pray for spiritual eyes and ears as you begin this year's study of the Old Testament.",
+        mediaTitle: "Old Testament Overview Video",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026?lang=eng"
+      },
+      "2026-01-02": {
+        focus: "Searching for Christ in the Old Testament",
+        scripture: "John 5:39 — \"Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.\"",
+        insight: "Jesus Christ is central to the Old Testament. Through symbols, sacrifices, and prophecies, the ancient prophets continually pointed toward the coming Messiah.",
+        reflection: "What symbols or teachings in the scriptures help you recognize Christ's hand in your life?",
+        action: "In your scripture journal or app, start a list of names and titles of Jesus Christ you discover this year.",
+        prayer: "Ask Heavenly Father to help you see the Savior's presence in your daily scripture readings.",
+        mediaTitle: "Special Witnesses of Christ",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/special-witnesses-of-christ?lang=eng"
+      },
+      "2026-01-03": {
+        focus: "Understanding Covenant Promises",
+        scripture: "Genesis 17:7 — \"And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant...\"",
+        insight: "A covenant with God is a sacred binding relationship. The Old Testament is the story of God reaching out to keep His promises to His children.",
+        reflection: "How do your personal covenants with God give you stability during changing circumstances?",
+        action: "Review the covenants you made at baptism and in the temple.",
+        prayer: "Express gratitude to God for keeping His promises to you and your family.",
+        mediaTitle: "General Conference: Covenant Belonging",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2019/10/40gong?lang=eng"
+      },
+      "2026-01-04": {
+        focus: "Feasting Upon the Word",
+        scripture: "Psalm 119:105 — \"Thy word is a lamp unto my feet, and a light unto my path.\"",
+        insight: "Scripture study does not just provide information; it provides guidance for daily decision-making.",
+        reflection: "What is one area of your life where you currently need the Lord's guidance?",
+        action: "Spend ten quiet minutes pondering how today's readings apply to a decision you face.",
+        prayer: "Ask the Holy Ghost to enlighten your mind as you plan for the week ahead.",
+        mediaTitle: "Gospel Art Book: Old Testament",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/old-testament?lang=eng"
+      },
+
+      // --- WEEK 2: Jan 5–11 (Moses 1; Abraham 3) ---
+      "2026-01-05": {
+        focus: "Thou Art My Son",
+        scripture: "Moses 1:4 — \"And behold, thou art my son; wherefore look, and I will show thee the workmanship of mine hands...\"",
+        insight: "God revealed to Moses his true identity as a son of God before giving him his mortal mission. Knowing your divine identity changes everything.",
+        reflection: "How does knowing you are a child of Heavenly Father shape how you respond to challenges?",
+        action: "Remind someone in your family or circle of friends of their divine worth today.",
+        prayer: "Pray for a deeper personal witness of your divine identity as a child of God.",
+        mediaTitle: "Old Testament Stories: Chapter 1",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-1?lang=eng"
+      },
+      "2026-01-06": {
+        focus: "Resisting Satan's Temptations",
+        scripture: "Moses 1:13 — \"...Moses looked upon Satan and said: Who art thou? For behold, I am a son of God, in the similitude of his Only Begotten...\"",
+        insight: "Moses resisted deception by remembering his divine heritage and calling upon God in earnest prayer.",
+        reflection: "What helps you recognize and reject negative or destructive influences in your daily routine?",
+        action: "Identify one influence in your environment that distracts you from God and replace it with something uplifting.",
+        prayer: "Ask Heavenly Father for strength to withstand temptation today.",
+        mediaTitle: "General Conference: Overcome the World and Find Rest",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2022/10/47nelson?lang=eng"
+      },
+      "2026-01-07": {
+        focus: "The Work and Glory of God",
+        scripture: "Moses 1:39 — \"For behold, this is my work and my glory—to bring to pass the immortality and eternal life of man.\"",
+        insight: "Everything God creates and does centers on helping His children return to Him and receive eternal life.",
+        reflection: "How can you align your daily activities with God's central purpose?",
+        action: "Choose one service action today that aligns with lifting and supporting someone else's growth.",
+        prayer: "Thank God for His loving devotion to your eternal growth.",
+        mediaTitle: "Video: Work and Glory",
+        mediaUrl: "https://www.churchofjesuschrist.org/media?lang=eng"
+      },
+
+      // --- WEEK 3: Jan 12–18 (Genesis 1–2; Moses 2–3; Abraham 4–5) ---
+      "2026-01-12": {
+        focus: "The Purpose of Creation",
+        scripture: "Genesis 1:1 — \"In the beginning God created the heaven and the earth.\"",
+        insight: "The Earth was created intentionally as a place for God's children to learn, grow, and exercise agency.",
+        reflection: "What aspect of nature or creation inspires awe and gratitude in you?",
+        action: "Take a walk outside today to notice God's creations and express gratitude for them.",
+        prayer: "Thank Heavenly Father for preparing a beautiful earth for us.",
+        mediaTitle: "Video: The Creation",
+        mediaUrl: "https://www.churchofjesuschrist.org/media/video/2012-06-0001-the-creation?lang=eng"
+      },
+
+      // --- WEEK 8: Feb 16–22 (Genesis 12–17; Abraham 1–2) ---
+      "2026-02-16": {
+        focus: "Desiring Righteousness",
+        scripture: "Abraham 1:2 — \"And, finding there was greater happiness and peace and rest for me, I sought for the blessings of the fathers... desiring also to be one who possessed great knowledge...\"",
+        insight: "Abraham actively sought righteousness, knowledge, and peace despite living in a difficult environment.",
+        reflection: "What spiritual blessings are you actively seeking in your life right now?",
+        action: "Write down one spiritual goal that will bring you greater knowledge or peace.",
+        prayer: "Ask Heavenly Father to increase your desire for truth and righteousness.",
+        mediaTitle: "Old Testament Stories: Abraham",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng"
+      },
+
+      // --- WEEK 21: May 18–24 (Joshua 1–8; 23–24) ---
+      "2026-05-18": {
+        focus: "Courage in the Lord",
+        scripture: "Joshua 1:9 — \"Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.\"",
+        insight: "Courage does not come from lack of danger, but from confidence that God accompanies us in every task.",
+        reflection: "Where in your life do you need to exercise greater courage right now?",
+        action: "Step forward with faith on a responsibility or conversation you have been putting off.",
+        prayer: "Pray for strength and courage to do what God requires of you today.",
+        mediaTitle: "Old Testament Stories: Joshua",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng"
+      },
+
+      // --- WEEK 25: Jun 15–21 (1 Samuel 17–18) ---
+      "2026-06-15": {
+        focus: "Facing Life's Goliaths",
+        scripture: "1 Samuel 17:45 — \"Then said David to the Philistine, Thou comest to me with a sword... but I come to thee in the name of the LORD of hosts...\"",
+        insight: "David defeated Goliath not through military might, but through unwavering trust in God's name and power.",
+        reflection: "What 'Goliath' (challenge or fear) are you facing, and how can you confront it in the Lord's name?",
+        action: "Write down three ways God has helped you overcome difficulties in the past.",
+        prayer: "Express faith in God's power to help you face difficult obstacles today.",
+        mediaTitle: "Old Testament Stories: David and Goliath",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010?lang=eng"
+      },
+
+      // --- WEEK 36: Aug 31–Sep 6 (Proverbs & Ecclesiastes) ---
+      "2026-08-31": {
+        focus: "Trusting God Over Human Wisdom",
+        scripture: "Proverbs 3:5–6 — \"Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.\"",
+        insight: "When we trust God's perspective above our limited human view, He clarifies our direction and purpose.",
+        reflection: "In what decision do you need to stop leaning on your own understanding and trust God?",
+        action: "Pause before making key decisions today and ask for heavenly guidance.",
+        prayer: "Pray for a humble heart that seeks God's direction in all things.",
+        mediaTitle: "General Conference: Trust in the Lord",
+        mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng"
+      },
+
+      // --- WEEK 38: Sep 14–20 (Isaiah 1–12) ---
       "2026-09-14": {
         focus: "Cleansing through Jesus Christ",
         scripture: "Isaiah 1:18 — \"Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.\"",
@@ -551,7 +598,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-youth/2018/06/hope-of-israel?lang=eng"
       },
 
-      // --- WEEK 2: Sep 21–27 ---
+      // --- WEEK 39: Sep 21–27 ---
       "2026-09-21": {
         focus: "A Shelter from Life's Storms",
         scripture: "Isaiah 25:4 — \"For thou hast been a strength to the poor, a strength to the needy in his distress, a refuge from the storm, a shadow from the heat...\"",
@@ -623,7 +670,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2008/10/lift-up-the-hands-which-hang-down?lang=eng"
       },
 
-      // --- WEEK 3: Sep 28–Oct 4 ---
+      // --- WEEK 40: Sep 28–Oct 4 ---
       "2026-09-28": {
         focus: "Comfort and Gentle Guidance",
         scripture: "Isaiah 40:1,11 — \"Comfort ye, comfort ye my people, saith your God... He shall feed his flock like a shepherd: he shall gather the lambs with his arm...\"",
@@ -695,7 +742,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/new-testament?lang=eng"
       },
 
-      // --- WEEK 5: Oct 12–18 (Isaiah 58–66) ---
+      // --- WEEK 42: Oct 12–18 (Isaiah 58–66) ---
       "2026-10-12": {
         focus: "The True Fast",
         scripture: "Isaiah 58:6 — \"Is not this the fast that I have chosen? to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free...\"",
@@ -767,7 +814,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng"
       },
     
-      // --- WEEK 6: Oct 19–25 (Jeremiah 1–20) ---
+      // --- WEEK 43: Oct 19–25 (Jeremiah 1–20) ---
       "2026-10-19": {
         focus: "Known Before Birth",
         scripture: "Jeremiah 1:5 — \"Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations.\"",
@@ -839,7 +886,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/old-testament?lang=eng"
       },
     
-      // --- WEEK 7: Oct 26–Nov 1 (Jeremiah 30–36; Ezekiel 1–34) ---
+      // --- WEEK 44: Oct 26–Nov 1 (Jeremiah 30–36; Ezekiel 1–34) ---
       "2026-10-26": {
         focus: "An Everlasting Love",
         scripture: "Jeremiah 31:3 — \"The LORD hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.\"",
@@ -911,7 +958,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/new-testament?lang=eng"
       },
     
-      // --- WEEK 8: Nov 2–8 (Ezekiel 37; 47) ---
+      // --- WEEK 45: Nov 2–8 (Ezekiel 37; 47) ---
       "2026-11-02": {
         focus: "Can These Bones Live?",
         scripture: "Ezekiel 37:3,5 — \"And he said unto me, Son of man, can these bones live?... Thus saith the Lord GOD unto these bones; Behold, I will cause breath to enter into you, and ye shall live:\"",
@@ -983,7 +1030,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book?lang=eng"
       },
     
-      // --- WEEK 9: Nov 9–15 (Daniel 1–6) ---
+      // --- WEEK 46: Nov 9–15 (Daniel 1–6) ---
       "2026-11-09": {
         focus: "Purposing in Your Heart",
         scripture: "Daniel 1:8 — \"But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank...\"",
@@ -1055,7 +1102,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2010/chapter-42-daniel-and-the-lions-den?lang=eng"
       },
     
-      // --- WEEK 10: Nov 16–22 (Hosea & Joel) ---
+      // --- WEEK 47: Nov 16–22 (Hosea & Joel) ---
       "2026-11-16": {
         focus: "Betrothed in Loving-kindness",
         scripture: "Hosea 2:19 — \"And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies.\"",
@@ -1127,7 +1174,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng"
       },
     
-      // --- WEEK 11: Nov 23–29 (Amos & Obadiah) ---
+      // --- WEEK 48: Nov 23–29 (Amos & Obadiah) ---
       "2026-11-23": {
         focus: "Revealing Secrets to His Servants the Prophets",
         scripture: "Amos 3:7 — \"Surely the Lord GOD will do nothing, but he revealeth his secret unto his servants the prophets.\"",
@@ -1199,7 +1246,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng"
       },
     
-      // --- WEEK 12: Nov 30–Dec 6 (Jonah & Micah) ---
+      // --- WEEK 49: Nov 30–Dec 6 (Jonah & Micah) ---
       "2026-11-30": {
         focus: "Arise, Go to Nineveh",
         scripture: "Jonah 1:2–3 — \"Arise, go to Nineveh, that great city, and cry against it... But Jonah rose up to flee unto Tarshish from the presence of the LORD...\"",
@@ -1271,7 +1318,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/media/music/songs?lang=eng"
       },
     
-      // --- WEEK 13: Dec 7–13 (Haggai, Zechariah, Malachi 1-2) ---
+      // --- WEEK 50: Dec 7–13 (Haggai, Zechariah, Malachi 1-2) ---
       "2026-12-07": {
         focus: "Consider Your Ways",
         scripture: "Haggai 1:5,7 — \"Now therefore thus saith the LORD of hosts; Consider your ways... Thus saith the LORD of hosts; Consider your ways.\"",
@@ -1343,7 +1390,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference?lang=eng"
       },
     
-      // --- WEEK 14: Dec 14–20 (Christmas Focus) ---
+      // --- WEEK 51: Dec 14–20 (Christmas Focus) ---
       "2026-12-14": {
         focus: "The Virgin Shall Conceive",
         scripture: "Isaiah 7:14 — \"Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.\"",
@@ -1415,7 +1462,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/manual/gospel-art-book/new-testament?lang=eng"
       },
     
-      // --- WEEK 15: Dec 21–27 (Malachi 3–4) ---
+      // --- WEEK 52: Dec 21–27 (Malachi 3–4) ---
       "2026-12-21": {
         focus: "The Messenger of the Covenant",
         scripture: "Malachi 3:1 — \"Behold, I will send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple...\"",
@@ -1487,7 +1534,7 @@
         mediaUrl: "https://www.churchofjesuschrist.org/study/general-conference/2011/10/the-hearts-of-the-children-shall-turn?lang=eng"
       },
     
-      // --- WEEK 16: Dec 28–31 (Year-End Review) ---
+      // --- WEEK 53: Dec 28–31 (Year-End Review) ---
       "2026-12-28": {
         focus: "Looking Back with Gratitude",
         scripture: "1 Samuel 7:12 — \"...Then Samuel took a stone... and called the name of it Eben-ezer, saying, Hitherto hath the LORD helped us.\"",
@@ -1530,14 +1577,8 @@
       }
     };
 
-    let currentDateStr = "2026-09-14";
-    let progressData = {};
-    try {
-      progressData = JSON.parse(localStorage.getItem('cfm_progress_2026')) || {};
-    } catch (e) { /* storage blocked (e.g. private mode) — start fresh */ }
+    let currentDateStr = "2026-01-01";
 
-    // Date helpers — always work in LOCAL time. toISOString() converts to UTC,
-    // which rolls the date forward in the evening for US time zones.
     function toDateKey(d) {
       const y = d.getFullYear();
       const m = String(d.getMonth() + 1).padStart(2, '0');
@@ -1546,19 +1587,19 @@
     }
 
     function parseDateKey(dateStr) {
-      // "YYYY-MM-DD" alone is parsed as UTC midnight; add a time to force local
       return new Date(dateStr + 'T00:00:00');
     }
 
     window.onload = () => {
       populateWeekSelect();
       const today = toDateKey(new Date());
-      if (today >= "2026-09-14" && today <= "2026-12-31") {
+      if (today >= "2026-01-01" && today <= "2026-12-31") {
         currentDateStr = today;
+      } else {
+        currentDateStr = "2026-01-01";
       }
       document.getElementById('date-picker').value = currentDateStr;
       loadDayData(currentDateStr);
-      updateStreak();
     };
 
     function populateWeekSelect() {
@@ -1581,14 +1622,14 @@
         return { week: getWeekMetaForDate(dateStr), day: scriptureDatabase[dateStr] };
       }
 
-      // Dynamic fallback for unpopulated dates
+      // Dynamic fallback for any date in the year without an explicit verse entry
       const meta = getWeekMetaForDate(dateStr);
       return {
         week: meta,
         day: {
           focus: meta.theme,
           scripture: `${meta.keyScripture} (KJV) — "Trust in the LORD with all thine heart; and lean not unto thine own understanding."`,
-          insight: `In this week's CFM study (${meta.title}), the Lord invites us to listen to His words and keep covenants.`,
+          insight: `In this week's CFM study (${meta.title}), the Lord invites us to listen to His words and keep our covenants.`,
           reflection: "How can you apply this week's principle in your daily decisions?",
           action: "Read today's assigned chapter in the Old Testament and mark verses that inspire you.",
           prayer: "Ask Heavenly Father to guide your choices and help you feel His love today.",
@@ -1614,63 +1655,18 @@
       document.getElementById('action-text').textContent = day.action;
       document.getElementById('prayer-text').textContent = day.prayer;
 
-      // Safely render direct canonical link
       const mTitle = day.mediaTitle || week.mediaTitle || "Church Media Resource";
       const mUrl = day.mediaUrl || week.mediaUrl || "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026?lang=eng";
       
       document.getElementById('media-text').innerHTML = 
         `🎬 <b>Church Media Recommendation:</b> <a href="${mUrl}" target="_blank" rel="noopener noreferrer">${mTitle}</a>`;
-
-      // Sync Checkbox States
-      const dayProgress = progressData[dateStr] || {};
-      ['read', 'reflect', 'act', 'pray'].forEach(step => {
-        const cb = document.getElementById(`check-${step}`);
-        const box = document.getElementById(`item-${step}-box`);
-        if (!cb || !box) return; // checklist is currently commented out in the HTML
-        const isChecked = !!dayProgress[step];
-        cb.checked = isChecked;
-        if (isChecked) box.classList.add('completed');
-        else box.classList.remove('completed');
-      });
-    }
-
-    function toggleStep(step) {
-      if (!progressData[currentDateStr]) progressData[currentDateStr] = {};
-      const cb = document.getElementById(`check-${step}`);
-      progressData[currentDateStr][step] = cb.checked;
-
-      const box = document.getElementById(`item-${step}-box`);
-      if (cb.checked) box.classList.add('completed');
-      else box.classList.remove('completed');
-
-      localStorage.setItem('cfm_progress_2026', JSON.stringify(progressData));
-      updateStreak();
-    }
-
-    function updateStreak() {
-      let streak = 0;
-      const streakEl = document.getElementById('streak-count');
-      if (!streakEl) return; // streak badge is currently commented out in the HTML
-      let checkDate = parseDateKey(currentDateStr);
-
-      while (true) {
-        const dateKey = toDateKey(checkDate);
-        const dayProg = progressData[dateKey];
-        if (dayProg && (dayProg.read || dayProg.reflect || dayProg.act || dayProg.pray)) {
-          streak++;
-          checkDate.setDate(checkDate.getDate() - 1);
-        } else {
-          break;
-        }
-      }
-      streakEl.textContent = streak;
     }
 
     function navigateDay(offset) {
       const d = parseDateKey(currentDateStr);
       d.setDate(d.getDate() + offset);
       const newStr = toDateKey(d);
-      if (newStr >= "2026-09-14" && newStr <= "2026-12-31") {
+      if (newStr >= "2026-01-01" && newStr <= "2026-12-31") {
         loadDayData(newStr);
       }
     }
