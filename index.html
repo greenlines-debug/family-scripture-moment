@@ -322,6 +322,20 @@
       <div class="media-box" id="media-text">
         🎬 <b>Church Media Recommendation:</b> -
       </div>
+	  <!-- HTML Structure for Media Section -->
+		<div class="media-container">
+			<button onclick="openMediaLink(dayData.mediaUrl)" class="media-btn">
+				🎬 Watch Today's Video
+			</button>
+			
+			<!-- Direct fallback link -->
+			<p class="fallback-text">
+				Link not loading? 
+				<a id="directMediaLink" href="#" target="_blank" rel="noopener noreferrer">
+					Click here to open video directly
+				</a>
+			</p>
+		</div>
 
       <div class="nav-buttons">
         <button class="btn" id="prev-btn" onclick="navigateDay(-1)">← Previous Day</button>
@@ -4476,6 +4490,25 @@
     function getWeekMetaForDate(dateStr) {
       return weeksMeta.find(w => dateStr >= w.start && dateStr <= w.end) || weeksMeta[0];
     }
+	
+	function openMediaLink(url) {
+	  if (!url) return;
+
+	  // Sanitize Church/Gospel Library links to force standard English web player
+	  let cleanUrl = url.trim();
+	  if (cleanUrl.includes('churchofjesuschrist.org') && !cleanUrl.includes('lang=')) {
+		cleanUrl += (cleanUrl.includes('?') ? '&' : '?') + 'lang=eng';
+	  }
+
+	  // Open in a clean new tab without passing window opener references
+	  const newTab = window.open();
+	  if (newTab) {
+		newTab.opener = null;
+		newTab.location = cleanUrl;
+	  } else {
+		window.location.href = cleanUrl;
+	  }
+	}	
 
     function getDayData(dateStr) {
       if (scriptureDatabase[dateStr]) {
@@ -4499,7 +4532,7 @@
       };
     }
 
-    function loadDayData(dateStr) {
+    function loadDayData_orig(dateStr) {
       currentDateStr = dateStr;
       document.getElementById('date-picker').value = dateStr;
 
@@ -4521,6 +4554,37 @@
       document.getElementById('media-text').innerHTML = 
         `🎬 <b>Church Media Recommendation:</b> <a href="${mUrl}" target="_blank" rel="noopener noreferrer">${mTitle}</a>`;
     }
+	
+	function loadDayData(dateStr) {
+	  currentDateStr = dateStr;
+	  document.getElementById('date-picker').value = dateStr;
+
+	  const { week, day } = getDayData(dateStr);
+	  document.getElementById('week-select').value = week.start;
+
+	  document.getElementById('week-name').textContent = week.title;
+	  document.getElementById('day-date').textContent = formatDateDisplay(dateStr);
+	  document.getElementById('focus-text').innerHTML = `<b>Focus:</b> ${day.focus}`;
+	  document.getElementById('scripture-text').textContent = day.scripture;
+	  document.getElementById('insight-text').textContent = day.insight;
+	  document.getElementById('reflection-text').textContent = day.reflection;
+	  document.getElementById('action-text').textContent = day.action;
+	  document.getElementById('prayer-text').textContent = day.prayer;
+
+	  const mTitle = day.mediaTitle || week.mediaTitle || "Church Media Resource";
+	  const mUrl = day.mediaUrl || week.mediaUrl || "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026?lang=eng";
+	  
+	  // Updated Media Container rendering
+	  document.getElementById('media-text').innerHTML = 
+		`🎬 <b>Church Media Recommendation:</b> 
+		 <button type="button" onclick="openMediaLink('${mUrl}')" style="background: none; border: none; color: #2563eb; text-decoration: underline; cursor: pointer; font-size: inherit; padding: 0;">
+		   ${mTitle}
+		 </button>
+		 <br>
+		 <small style="opacity: 0.8; font-size: 0.85em;">
+		   Link not loading? <a id="directMediaLink" href="${mUrl}" target="_blank" rel="noopener noreferrer">Click here to open directly</a>
+		 </small>`;
+	}
 
     function navigateDay(offset) {
       const d = parseDateKey(currentDateStr);
